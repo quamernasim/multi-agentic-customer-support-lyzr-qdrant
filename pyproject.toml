@@ -15,6 +15,7 @@ dependencies = [
     "accelerate",
     "bitsandbytes",
     "python-dotenv",
+    "google-generativeai"
 ]
 
 [build-system]

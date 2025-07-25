@@ -1,6 +1,9 @@
-# run_chat.py
+# src/run_chat.py
+
+import uuid
+import re
 from agents import (
-    huggingface_model,
+    gemini_model,
     sentiment_agent,
     manager_agent,
     search_knowledge_base,
@@ -8,9 +11,9 @@ from agents import (
     save_message,
 )
 from lyzr_automata import Task
-from lyzr_automata.pipelines.linear_sync_pipeline import LinearSyncPipeline
 from lyzr_automata.tasks.task_literals import InputType, OutputType
-import uuid
+from lyzr_automata.pipelines.linear_sync_pipeline import LinearSyncPipeline
+
 
 def run_chat_session():
     """Runs an interactive chat session with the multi-agent system."""
@@ -28,7 +31,7 @@ def run_chat_session():
         sentiment_analysis_task = Task(
             name="Sentiment Analysis Task",
             agent=sentiment_agent,
-            model=huggingface_model,
+            model=gemini_model,
             instructions=f"Analyze the sentiment of this user query: '{user_input}'",
             output_type=OutputType.TEXT,
             input_type=InputType.TEXT,
@@ -43,7 +46,7 @@ def run_chat_session():
         support_task = Task(
             name="Customer Support Task",
             agent=manager_agent,
-            model=huggingface_model,
+            model=gemini_model,
             instructions=f"""
             A user has asked the following question: '{user_input}'
 
