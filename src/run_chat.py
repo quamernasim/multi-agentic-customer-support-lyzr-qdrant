@@ -1,84 +1,112 @@
-# src/run_chat.py
+# run_support.py
 
-import uuid
+import json
 import re
+import uuid
 from agents import (
-    gemini_model,
-    sentiment_agent,
-    manager_agent,
-    search_knowledge_base,
-    get_history,
-    save_message,
+    gemini_model, RouterAgent, SentimentAgent, KBAgent,
+    ResponseAgent, EscalationAgent, retrieve_kb,
+    get_history, save_message
 )
 from lyzr_automata import Task
-from lyzr_automata.tasks.task_literals import InputType, OutputType
 from lyzr_automata.pipelines.linear_sync_pipeline import LinearSyncPipeline
+from lyzr_automata.tasks.task_literals import InputType, OutputType
 
-
-def run_chat_session():
-    """Runs an interactive chat session with the multi-agent system."""
+def run_session():
     session_id = str(uuid.uuid4())
-    print(f"Starting new chat session: {session_id}")
-    print("Welcome to our customer support! How can I help you today? (type 'exit' to end)")
-
+    print(f"Session {session_id} started.")
+    
     while True:
-        user_input = input("You: ")
-        if user_input.lower() == 'exit':
-            print("Thank you for chatting with us. Goodbye!")
+        user_input = input("User: ")
+        if user_input.lower() == "exit":
             break
-        
-        # Task 1: Analyze Sentiment
-        sentiment_analysis_task = Task(
-            name="Sentiment Analysis Task",
-            agent=sentiment_agent,
-            model=gemini_model,
-            instructions=f"Analyze the sentiment of this user query: '{user_input}'",
-            output_type=OutputType.TEXT,
-            input_type=InputType.TEXT,
-        )
 
-        # Prepare context for the main task
-        history = get_history(session_id)
-        kb_context = search_knowledge_base(user_input)
         save_message(session_id, "user", user_input)
+        history = get_history(session_id)
 
-        # Task 2: Generate Support Response (receives sentiment as input)
-        support_task = Task(
-            name="Customer Support Task",
-            agent=manager_agent,
+        # 1. Route Issue
+        route_task = Task(
+            name="RouteIssue",
+            agent=RouterAgent,
             model=gemini_model,
-            instructions=f"""
-            A user has asked the following question: '{user_input}'
-
-            First, an expert analyzed the user's sentiment. Their analysis is:
-
-            Here is the conversation history for context:
-            {history}
-
-            Here is some relevant information from our knowledge base:
-            {kb_context}
-
-            Based on all of this information, especially the user's sentiment, please provide a clear and helpful response. If the sentiment is Negative, be extra empathetic.
-            """,
+            instructions=user_input,
+            input_type=InputType.TEXT,
+            output_type=OutputType.TEXT
+        )
+        # 2. Analyze Sentiment
+        senti_task = Task(
+            name="AnalyzeSentiment",
+            agent=SentimentAgent,
+            model=gemini_model,
+            instructions=user_input,
+            input_type=InputType.TEXT,
+            output_type=OutputType.TEXT
+        )
+        # 3. Retrieve KB
+        kb_context = retrieve_kb(user_input)
+        kb_task = Task(
+            name="RetrieveKB",
+            agent=KBAgent,
+            model=gemini_model,
+            instructions=kb_context,
+            input_type=InputType.TEXT,
+            output_type=OutputType.TEXT
+        )
+        # 4. Escalation Check
+        escalation_task = Task(
+            name="CheckEscalation",
+            agent=EscalationAgent,
+            model=gemini_model,
+            instructions=user_input,
             input_type=InputType.TEXT,
             output_type=OutputType.TEXT,
+            input_tasks = [
+                route_task, 
+                senti_task
+            ]
         )
-        
-        # Run the pipeline
+        # 5. Generate Response
+        resp_instructions = (
+            f"You have been provided with the Issue, "
+            f"sentiment of the user, "
+            f"Knowledge Base context, "
+            f"History: {history}\n"
+            f"and Escalation status\n\n"
+            "Now craft the final support response based on all of the above."
+        )
+        response_task = Task(
+            name="GenerateResponse",
+            agent=ResponseAgent, model=gemini_model,
+            instructions=resp_instructions,
+            input_type=InputType.TEXT,
+            output_type=OutputType.TEXT,
+            input_tasks = [
+                route_task, 
+                senti_task, 
+                kb_task, 
+                escalation_task
+            ]
+        )
+
         pipeline = LinearSyncPipeline(
-            name="Support Pipeline",
-            completion_message="Pipeline completed.",
-            tasks=[sentiment_analysis_task, support_task],
+            name="MultiAgentSupport",
+            completion_message="Done",
+            tasks=[
+                route_task,
+                senti_task,
+                kb_task,
+                escalation_task,
+                response_task
+            ]
         )
-        
-        result = pipeline.run()
-        
-        # The final output is from the last task in the pipeline
-        agent_response = result[-1]['task_output']
-        print(f"Agent: {agent_response}")
-        
-        # Save the agent's response to history
-        save_message(session_id, "assistant", agent_response)
+        outputs = pipeline.run()
+
+        response = outputs[-1]['task_output']
+        response = re.sub(r"^```json\n|\n```$", "", response.strip())
+        response = json.loads(response)
+        response = response['response']['message']
+        print(f"Agent: {response}")
+        save_message(session_id, "assistant", response)
 
 if __name__ == "__main__":
-    run_chat_session()
+    run_session()
