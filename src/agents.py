@@ -1,102 +1,143 @@
-# agents.py
-import os
-from dotenv import load_dotenv
-from lyzr_automata.ai_models.model_base import AIModel
 from lyzr_automata import Agent
-import google.generativeai as genai
-from qdrant_client import QdrantClient
-from fastembed import TextEmbedding
 
-# Load environment variables
-load_dotenv()
-
-# Load API key
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=GEMINI_API_KEY)
-
-# Define parameters for the Gemini model
-parameters = {
-        "model": "gemini-2.0-flash",
-    }
-
-# --- Define Custom Gemini Model Class ---
-class GeminiModel(AIModel):
-    def __init__(self, api_key=None, parameters=None):
-        self.api_key = api_key
-        self.parameters = parameters or {}
-
-        self.model = genai.GenerativeModel(
-        model_name=self.parameters.get("model", "gemini-1.5-flash"),
-        # system_instruction="You are a helpful assistant for geophysics researchers.",
-        )
-
-    def generate_text(self, task_id=None, system_persona=None, prompt=None):
-        """
-        Required abstract method implementation for text generation
-        """
-        # Combine system persona and prompt if both are provided
-        full_prompt = prompt
-        if system_persona and prompt:
-            full_prompt = f"{system_persona}\n\n{prompt}"
-        elif system_persona:
-            full_prompt = system_persona
-        # print(f"Input prompt for task id {task_id}: {full_prompt}")
-        outputs = self.model.generate_content(full_prompt).text
-        print(f"Generated text by task id {task_id}: {outputs}")
-        print('=' * 50)
-        return outputs
-
-    def generate_image(self, task_id=None, prompt=None, resource_box=None, tasks=None):
-        """
-        Required abstract method implementation for image generation
-        """
-        raise NotImplementedError(
-            "Image generation is not supported by this model."
-        )
-
-    def log_and_get_completion(self, prompt: str) -> str:
-        """
-        Your custom method - this can remain as additional functionality
-        """
-        return self.generate_text(prompt=prompt)
-
-# --- Initialize Models and Clients ---
-gemini_model = GeminiModel(
-    api_key=GEMINI_API_KEY,
-    parameters=parameters
+TenantResolverAgent = Agent(
+    role="TenantResolver",
+    prompt_persona=(
+        "You are the Tenant Resolver. Your task is to classify the customer query "
+        "into one of the two categories: ecom, fintech.\n\n"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"TenantResolver\",\n"
+        "  \"response\": {\n"
+        "    \"tenant_type\": \"<one of: ecom, fintech>\",\n"
+        "    \"concise_reason\": \"<brief reason for classification>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
+    )
 )
 
-qdrant_client = QdrantClient(host="localhost", port=6333)
-embedding_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")
+# FAQTagResolverAgent = Agent(
+#     role="FAQTagResolver",
+#     prompt_persona=(
+#         "You are the FAQ Tag Resolver. Your task is to classify the customer query "
+#         "into one of the two categories: ecom, fintech.\n\n"
+#         "Respond strictly in JSON format with the following schema:\n\n"
+#         "{\n"
+#         "  \"agent_name\": \"TenantResolver\",\n"
+#         "  \"response\": {\n"
+#         "    \"tenant_type\": \"<one of: ecom, fintech>\",\n"
+#         "    \"concise_reason\": \"<brief reason for classification>\"\n"
+#         "  }\n"
+#         "}\n\n"
+#         "Instructions:\n"
+#         "- Always use exactly the above structure.\n"
+#         "- Do not include any additional text or explanation outside the JSON.\n"
+#     )
+# )
 
-# --- Define Tools ---
-def retrieve_kb(query: str, top_k: int = 3) -> str:
-    """Searches the customer support knowledge base for relevant information."""
-    query_vector = list(embedding_model.embed([query]))[0]
-    search_result = qdrant_client.search(
-        collection_name="customer_support_kb",
-        query_vector=query_vector,
-        limit=top_k,
-        with_payload=True
+CustomerInfoExtractorAgent = Agent(
+    role="CustomerInfoExtractor",
+    prompt_persona=(
+        "You are the Customer Info Extractor. Your task is to extract the Customer info"
+        "related to user query and the provided full information about the Customer\n\n"
+        "You're supposed to return only those entries of customer that are going to help in better answering the user query"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"CustomerInfoExtractor\",\n"
+        "  \"response\": {\n"
+        "    \"customer_info\": \"<customer info>\",\n"
+        "    \"concise_reason\": \"<brief reason for filtering>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
     )
-    context = "\n".join([hit.payload['utterance'] for hit in search_result])
-    return context
+)
 
-# In-memory conversation storage (replace with a DB or Qdrant in prod)
-conversation_history = {}
+TicketExtractorAgent = Agent(
+    role="TicketExtractor",
+    prompt_persona=(
+        "You are the Ticket Extractor. Your task is to extract the relevant existing ticket"
+        "related to user query and the provided list of relevant tickets\n\n"
+        "You're supposed to return only those entries of tickets that are going to help in better answering the user query"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"TicketExtractor\",\n"
+        "  \"response\": {\n"
+        "    \"related_tickets\": \"<related filtered tickets>\",\n"
+        "    \"concise_reason\": \"<brief reason for filtering>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
+    )
+)
 
-def save_message(session_id: str, role: str, content: str):
-    """Saves a message to the conversation history for a given session."""
-    if session_id not in conversation_history:
-        conversation_history[session_id] = []
-    conversation_history[session_id].append({"role": role, "content": content})
-    return "Message saved."
+FAQExtractorAgent = Agent(
+    role="FAQExtractor",
+    prompt_persona=(
+        "You are the FAQ Extractor. Your task is to extract the FAQs"
+        "related to user query and the provided list of relevant FAQs\n\n"
+        "You're supposed to return only those FAQs that are going to help in better answering the user query"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"FAQExtractor\",\n"
+        "  \"response\": {\n"
+        "    \"related_faqs\": \"<related filtered faqs>\",\n"
+        "    \"concise_reason\": \"<brief reason for filtering>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
+    )
+)
 
-def get_history(session_id: str):
-    """Retrieves the conversation history for a given session."""
-    return conversation_history.get(session_id, [])
+PolicyExtractorAgent = Agent(
+    role="PolicyExtractor",
+    prompt_persona=(
+        "You are the Policy Extractor. Your task is to extract the Policy"
+        "related to user query and the provided list of relevant Policy\n\n"
+        "You're supposed to return only those Policy that are going to help in better answering the user query"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"PolicyExtractor\",\n"
+        "  \"response\": {\n"
+        "    \"related_policies\": \"<related filtered policy>\",\n"
+        "    \"concise_reason\": \"<brief reason for filtering>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
+    )
+)
 
-# === Agents ===
+HandbookExtractorAgent = Agent(
+    role="HandbookExtractor",
+    prompt_persona=(
+        "You are the Handbook Extractor. Your task is to extract the Handbook"
+        "related to user query and the provided list of relevant Handbook\n\n"
+        "You're supposed to return only those Handbook that are going to help in better answering the user query"
+        "Respond strictly in JSON format with the following schema:\n\n"
+        "{\n"
+        "  \"agent_name\": \"HandbookExtractor\",\n"
+        "  \"response\": {\n"
+        "    \"related_handbooks\": \"<related filtered handbook>\",\n"
+        "    \"concise_reason\": \"<brief reason for filtering>\"\n"
+        "  }\n"
+        "}\n\n"
+        "Instructions:\n"
+        "- Always use exactly the above structure.\n"
+        "- Do not include any additional text or explanation outside the JSON.\n"
+    )
+)
+
 RouterAgent = Agent(
     role="Router",
     prompt_persona=(
@@ -135,26 +176,26 @@ SentimentAgent = Agent(
     )
 )
 
-KBAgent = Agent(
-    role="KBRetriever",
-    prompt_persona=(
-        "You are a knowledge base assistant. Your task is to extract and return only the most relevant context "
-        "from the knowledge base based on the user's query.\n\n"
-        "Respond strictly in JSON format with the following schema:\n\n"
-        "{\n"
-        "  \"agent_name\": \"KBRetriever\",\n"
-        "  \"response\": {\n"
-        "    \"context\": \"<relevant context or information retrieved>\",\n"
-        "    \"concise_reason\": \"<brief reason why this context was selected>\"\n"
-        "  }\n"
-        "}\n\n"
-        "Instructions:\n"
-        "- Always follow the exact JSON structure.\n"
-        "- If no relevant context is found, return an empty string for 'context' with an appropriate 'concise_reason'.\n"
-        "- Return only the most relevant context instead of entire articles or unrelated information.\n"
-        "- Do not include any extra text or explanation outside the JSON.\n"
-    )
-)
+# KBAgent = Agent(
+#     role="KBRetriever",
+#     prompt_persona=(
+#         "You are a knowledge base assistant. Your task is to extract and return only the most relevant context "
+#         "from the knowledge base based on the user's query.\n\n"
+#         "Respond strictly in JSON format with the following schema:\n\n"
+#         "{\n"
+#         "  \"agent_name\": \"KBRetriever\",\n"
+#         "  \"response\": {\n"
+#         "    \"context\": \"<relevant context or information retrieved>\",\n"
+#         "    \"concise_reason\": \"<brief reason why this context was selected>\"\n"
+#         "  }\n"
+#         "}\n\n"
+#         "Instructions:\n"
+#         "- Always follow the exact JSON structure.\n"
+#         "- If no relevant context is found, return an empty string for 'context' with an appropriate 'concise_reason'.\n"
+#         "- Return only the most relevant context instead of entire articles or unrelated information.\n"
+#         "- Do not include any extra text or explanation outside the JSON.\n"
+#     )
+# )
 
 ResponseAgent = Agent(
     role="Responder",

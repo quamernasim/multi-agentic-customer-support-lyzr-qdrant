@@ -1,0 +1,152 @@
+[
+  {
+    "policy_id": "POL-001",
+    "title": "Return and Exchange Policy",
+    "description": "Our Return and Exchange Policy allows customers to return or exchange eligible items within 7 days of delivery. To qualify, the item must be unused, unwashed, and in its original packaging with all tags intact. For electronics and high-value items, the product should be sealed and unopened. Once a return request is initiated, our logistics team will schedule a pickup within 2-4 working days. After inspection of the returned item, we will either issue a replacement or process a refund as per the customer’s request. Please note that certain product categories such as personal care, lingerie, customized products, and perishable goods are non-returnable unless received damaged or defective. Items damaged due to misuse or mishandling will not be accepted. Our exchange option is limited to size and color variations of the same product, subject to stock availability. If an exchange is not possible, a refund will be issued as per our Refund Policy. The company reserves the right to deny any return if the returned product does not meet our quality guidelines.",
+    "tags": ["returns", "refunds"]
+  },
+  {
+    "policy_id": "POL-002",
+    "title": "Refund Policy",
+    "description": "Refunds are processed only after successful inspection of returned products or in cases of failed or canceled orders. Refunds will be credited to the original payment method within 5-7 business days, depending on your bank or payment provider. If the payment was made using COD, refunds will be processed through a bank transfer or store credit. For partial refunds due to damaged items or shipping discrepancies, the refunded amount will correspond to the value of the affected product(s) only. In rare cases, if refund processing is delayed due to bank or payment gateway issues, we request customers to allow 2 additional business days before escalation. Refunds for promotional discounts or coupon-based purchases will exclude the coupon value unless explicitly mentioned. If a refund fails due to incorrect payment details provided by the customer, we may require verification documents for re-processing. Refund requests related to fraudulent activity, suspicious returns, or excessive returns from a single account may be reviewed and declined as per our Fraud Prevention Guidelines.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "POL-003",
+    "title": "Shipping Policy",
+    "description": "We aim to deliver your orders in the fastest possible time. Standard shipping typically takes 3-5 business days, while express shipping is available in select cities with a delivery window of 1-2 business days. For international orders, delivery times vary between 7-15 business days depending on the destination country and customs clearance processes. Shipping charges are calculated based on order value, weight, and destination. Orders above a certain threshold qualify for free shipping. In the event of unforeseen circumstances such as weather delays, strikes, or natural disasters, shipping timelines may be extended. Once an order is dispatched, customers will receive a tracking ID via email and SMS, allowing them to track their shipment in real-time. Please ensure accurate address details are provided to avoid delivery issues. Our logistics partners will attempt delivery twice before the package is returned to our warehouse. Reshipment charges will apply for orders returned due to failed delivery attempts caused by incorrect or incomplete addresses.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-004",
+    "title": "Cash on Delivery (COD) Policy",
+    "description": "Our Cash on Delivery (COD) option allows customers to pay for their orders at the time of delivery. COD is available only for select pin codes and product categories. Customers are required to make payment in cash or through UPI at the time of delivery. Please ensure the exact amount is ready, as delivery personnel may not carry change. Orders placed with COD will be verified via phone or SMS before processing. Failure to confirm COD verification may result in order cancellation. Repeated refusal of COD orders without valid reasons may lead to account restrictions. Certain high-value orders may require partial prepayment before COD is approved. We do not accept cheques, demand drafts, or any form of credit/debit card payments during COD delivery. COD orders cannot be modified once placed. If you wish to switch from COD to prepaid payment, you must cancel the order before it is dispatched and place a new prepaid order.",
+    "tags": ["payments"]
+  },
+  {
+    "policy_id": "POL-005",
+    "title": "Order Cancellation Policy",
+    "description": "Orders can be canceled free of charge before they are shipped. Once shipped, cancellations are not allowed. To cancel an order, go to 'My Orders', select the order you want to cancel, and click 'Cancel Order'. If the order is already dispatched, you may refuse delivery, after which we will initiate a refund once the product is returned to our warehouse. Prepaid orders canceled prior to shipping will be refunded to the original payment method within 5-7 business days. COD cancellations do not require refund processing. Frequent cancellations may trigger account review and temporary suspension of certain order privileges. For customized or made-to-order products, cancellations must be made within 12 hours of placing the order as production begins immediately. If an order is canceled due to unforeseen reasons like stock unavailability or address issues, customers will be notified and provided an alternative option or refund.",
+    "tags": ["orders", "refunds"]
+  },
+  {
+    "policy_id": "POL-006",
+    "title": "Account Security Policy",
+    "description": "Your account security is of utmost importance to us. Customers are encouraged to use strong passwords that include a mix of letters, numbers, and special characters. We employ advanced encryption and security protocols to protect your personal data. Multi-factor authentication (MFA) is available and recommended for all users. Never share your login credentials or OTPs with anyone claiming to be our representative. We will never ask for sensitive information such as passwords or bank details over email or phone. In case of unauthorized access, report it immediately to our support team. Accounts found engaging in fraudulent or abusive activities will be suspended. Customers may request account deletion or data export at any time as per our Privacy Policy. To ensure maximum safety, we automatically log out inactive sessions after a predefined time.",
+    "tags": ["account"]
+  },
+  {
+    "policy_id": "POL-007",
+    "title": "Privacy and Data Protection Policy",
+    "description": "We are committed to protecting your personal data and ensuring compliance with data privacy laws. We collect only the necessary information required to process your orders and enhance your shopping experience. This includes your name, contact details, payment information, and delivery address. We do not sell or rent your personal information to third parties. Your data is stored securely using encryption and access controls. We may share data with trusted partners like payment gateways and logistics providers solely for order fulfillment. Customers can review, update, or delete their personal data through their account settings. We also offer the option to opt out of promotional emails and marketing communications. Our systems are regularly audited for compliance with GDPR and other applicable regulations. Any data breaches will be promptly communicated to affected users as per legal requirements.",
+    "tags": ["account"]
+  },
+  {
+    "policy_id": "POL-008",
+    "title": "Failed Delivery Policy",
+    "description": "A failed delivery occurs when our courier partner is unable to deliver your order after two attempts. Common reasons include incorrect address, customer unavailability, or refusal to accept delivery. In such cases, the order is returned to our warehouse. For prepaid orders, we will refund the amount after deducting applicable shipping charges if the failure was due to incorrect customer details. For COD orders, repeated refusals may lead to account restrictions. Customers can contact support to request re-delivery, which may incur an additional shipping fee. Ensure your contact number is reachable during the delivery window and provide clear address details to prevent failed delivery attempts.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-009",
+    "title": "Partial Order Delivery Policy",
+    "description": "In some cases, orders may be delivered in multiple shipments due to stock availability or logistical constraints. Customers will be informed if their order is split into multiple packages. Each package will have its own tracking ID. For prepaid orders, the total amount will be charged upfront, and no additional cost is incurred for separate shipments. If any item in the order is out of stock, customers will be notified and given the option for refund, replacement, or future delivery. Refunds for undelivered items will follow our standard refund timeline. We ensure that all partial deliveries are completed within the promised timeframe unless delayed due to external factors.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-010",
+    "title": "Warranty Claim Policy",
+    "description": "Products covered under a manufacturer warranty can be claimed for repairs or replacement within the warranty period. Customers must provide proof of purchase and warranty card (if applicable). Warranty claims are handled directly by the manufacturer or their authorized service centers. We assist in connecting customers to the appropriate service center but do not directly process warranty repairs. Damage caused by misuse, unauthorized repairs, or physical damage is not covered under warranty. If a product is deemed non-repairable under warranty, customers may be eligible for a replacement as per the manufacturer’s discretion. For any assistance during this process, our support team is available to guide you.",
+    "tags": ["returns"]
+  },
+  {
+    "policy_id": "POL-011",
+    "title": "Fraud Prevention and Account Suspension Policy",
+    "description": "To ensure a safe shopping experience for all our customers, we actively monitor transactions for potential fraudulent activities. Suspicious behaviors include, but are not limited to, multiple failed payment attempts, excessive returns or refunds within a short period, use of stolen payment credentials, and abusive interactions with support staff. If fraudulent activity is detected, the account may be temporarily suspended pending investigation. During this time, all orders linked to the account will be held, and refunds will be processed only after verification. Customers found engaging in fraudulent actions will be permanently banned, and legal action may be pursued. We encourage customers to contact our support team immediately if they notice unauthorized activities on their account. To reactivate a suspended account, customers must provide valid proof of identity and address for verification purposes.",
+    "tags": ["account"]
+  },
+  {
+    "policy_id": "POL-012",
+    "title": "Damaged Product Policy",
+    "description": "If you receive a product that is damaged or defective upon delivery, please report it within 48 hours of receipt. Customers are required to upload clear images or videos showing the damage through our returns portal. Upon verification, we will arrange for a reverse pickup of the damaged item and offer either a replacement or a refund based on customer preference. Damage caused during unboxing or mishandling by the customer will not be covered. High-value products such as electronics may require additional inspection by authorized service centers before approval. Any physical damage not reported within 48 hours will be treated as post-delivery damage and will not be eligible for returns or refunds.",
+    "tags": ["returns", "refunds"]
+  },
+  {
+    "policy_id": "POL-013",
+    "title": "International Shipping and Customs Policy",
+    "description": "For international customers, we ship to select countries worldwide. Shipping fees are calculated at checkout based on destination and weight. Customs duties, import taxes, and other charges levied by the destination country are the sole responsibility of the customer. Our shipping timelines exclude delays caused by customs clearance. We provide all necessary documentation to facilitate smooth customs processing but cannot control local customs policies. If a shipment is held by customs for clearance, customers must coordinate with local authorities for release. In cases where a shipment is returned to us due to refusal to pay customs duties, the refund will exclude shipping charges. Products restricted by international trade regulations or banned in certain countries cannot be shipped.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-014",
+    "title": "Out of Stock and Backorder Policy",
+    "description": "In rare cases, products may go out of stock after an order is placed. When this occurs, we will notify you immediately and provide options for a refund, product substitution, or waitlisting for restock. Backordered products are shipped as soon as they become available. For pre-paid orders, if the wait time exceeds 14 days, customers can request an immediate refund. In cases where only part of your order is out of stock, the available items will be shipped, and the balance refunded or shipped later as per your preference. Customers subscribed to restock notifications will be alerted as soon as the product becomes available again.",
+    "tags": ["orders", "refunds"]
+  },
+  {
+    "policy_id": "POL-015",
+    "title": "Payment Failure and Double Charge Policy",
+    "description": "If your payment fails but the amount is debited from your account, please allow 48 hours for it to be automatically reversed. If not reversed, contact our support team with your transaction reference number. In cases of double charges (when a customer is charged twice for the same order), we will verify the payment records and issue a refund for the duplicate payment within 5-7 business days. We strongly recommend avoiding multiple browser refreshes or duplicate clicks during payment processing. For failed COD verification, orders will be automatically canceled after 24 hours unless manually confirmed by the customer. Payment failures due to incorrect card details or expired cards must be resolved directly with your bank or payment provider.",
+    "tags": ["payments"]
+  },
+  {
+    "policy_id": "POL-016",
+    "title": "Loyalty Points and Rewards Policy",
+    "description": "Our Loyalty Program allows customers to earn points on every purchase. Points are credited to your account 24 hours after order delivery and can be redeemed for discounts on future purchases. Loyalty points expire after 12 months of inactivity. Points cannot be exchanged for cash and are non-transferable between accounts. Any fraudulent activity involving manipulation of points will lead to account suspension and forfeiture of accumulated points. Points are not awarded on purchases made using full store credits, refunds, or on discounted items where promotions specifically exclude reward accrual. Redemption of points cannot be combined with certain coupon codes or promotions unless otherwise specified.",
+    "tags": ["account"]
+  },
+  {
+    "policy_id": "POL-017",
+    "title": "Bulk Order and Corporate Purchase Policy",
+    "description": "We offer special pricing and customized solutions for bulk and corporate orders. Bulk orders typically refer to purchases of 10 or more units of a single product or high-value purchases exceeding a specified threshold. Interested customers or organizations must submit a request through our 'Corporate Orders' page. All bulk orders require 50% advance payment, with the balance payable before dispatch. Lead times for bulk orders vary depending on product availability and customization requirements. Returns and cancellations for bulk orders are limited to defective or damaged items only. Custom branding, packaging, or invoicing requirements must be shared at the time of order confirmation.",
+    "tags": ["orders"]
+  },
+  {
+    "policy_id": "POL-018",
+    "title": "Subscription Renewal and Cancellation Policy",
+    "description": "Our subscription service offers customers recurring deliveries of selected products at discounted prices. Subscriptions are renewed automatically on the billing date unless canceled in advance. Customers can cancel subscriptions at any time through their account dashboard, but cancellations made after the renewal date will take effect from the next billing cycle. Failed payments for subscription renewals will result in temporary suspension until updated payment details are provided. Discounts offered under subscriptions are applicable only while the subscription remains active. Any misuse of the subscription system, such as repeatedly signing up to exploit introductory discounts, may lead to suspension of subscription privileges.",
+    "tags": ["account", "payments"]
+  },
+  {
+    "policy_id": "POL-019",
+    "title": "Gift Card and Store Credit Policy",
+    "description": "Gift cards and store credits are valid for 12 months from the date of issue. They can be redeemed for any eligible products on our platform but cannot be exchanged for cash. Lost or stolen gift cards will not be replaced. Store credits issued for refunds are automatically applied during checkout. Gift cards cannot be used to purchase other gift cards or subscriptions. Multiple gift cards can be combined in a single order. If the order value exceeds the gift card balance, the difference can be paid using other payment methods. Gift cards are non-refundable and non-transferable once issued.",
+    "tags": ["payments"]
+  },
+  {
+    "policy_id": "POL-020",
+    "title": "Contactless Delivery Policy",
+    "description": "For customer safety and hygiene, we offer contactless delivery. The delivery agent will leave the package at your doorstep or designated safe location without requiring a signature. Customers will be notified by SMS or app notification once the delivery is completed. We recommend sanitizing packages after receipt. COD orders with contactless delivery must be prepaid using UPI at the time of delivery. In case of delivery disputes, photo proof of delivery will be shared. This service is available only in selected pin codes. Requests for rescheduling or alternative delivery instructions should be provided prior to dispatch.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-021",
+    "title": "Product Authenticity Policy",
+    "description": "We guarantee 100% authenticity of all products sold on our platform. We source products directly from authorized manufacturers, brands, and verified suppliers. Each product undergoes a multi-step quality check before being listed. Counterfeit or replica products are strictly prohibited. If you receive a product that you suspect is counterfeit, please report it immediately with proof. After verification, we will process a full refund and take appropriate action against the seller. Repeat sellers or accounts flagged for counterfeit listings are permanently banned. Authenticity certificates are provided for select categories like luxury goods and electronics.",
+    "tags": ["orders"]
+  },
+  {
+    "policy_id": "POL-022",
+    "title": "Seasonal Sale and Promotional Policy",
+    "description": "Our platform offers seasonal sales and promotional discounts during events like Black Friday, Diwali, and New Year. Discount codes must be applied during checkout and cannot be retroactively added. Coupons may have restrictions, including minimum purchase value, applicable product categories, and expiration dates. During sale periods, order processing and delivery may take longer due to high demand. Sale items are eligible for returns only if defective or damaged. Refunds for returned sale items will be based on the discounted price paid, not the original price. Combining multiple coupons in a single order is not allowed unless explicitly mentioned.",
+    "tags": ["orders", "payments"]
+  },
+  {
+    "policy_id": "POL-023",
+    "title": "Failed Refund Escalation Policy",
+    "description": "If a refund has not been credited within the stipulated 7-10 business days, customers can escalate the issue through our 'Refund Support' portal. We will liaise with the payment gateway or bank to trace the refund. Customers may be asked to provide their bank statement or transaction reference for verification. If the refund failure is due to incorrect details provided during the initial transaction, we will reinitiate it after proper validation. In extreme cases where the refund fails due to third-party issues, store credit will be issued immediately as an interim resolution.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "POL-024",
+    "title": "Delivery Time Commitment Policy",
+    "description": "We are committed to delivering all orders within the promised timelines. Standard delivery timelines vary between 3-5 business days, while express delivery is 1-2 days. In case of unforeseen delays, customers will be proactively notified via email and SMS. Delays due to weather conditions, strikes, or natural disasters will not be eligible for compensation. If a delay exceeds 7 business days beyond the promised date, we will offer a shipping fee refund or store credit as compensation. Delivery time commitments are subject to accurate address details provided at checkout.",
+    "tags": ["shipping"]
+  },
+  {
+    "policy_id": "POL-025",
+    "title": "Account Deletion and Data Removal Policy",
+    "description": "Customers can request permanent account deletion through the 'Privacy Settings' page. Upon request, all personal data including order history, saved addresses, and payment information will be erased, except for data required to comply with legal obligations (e.g., tax records). Once deleted, the account cannot be recovered. Before deletion, customers must settle any outstanding payments or disputes. Active subscriptions linked to the account will be canceled automatically. Requests are processed within 7 business days after verification. Deleted accounts will lose access to loyalty points, store credits, and all associated benefits permanently.",
+    "tags": ["account"]
+  }
+]

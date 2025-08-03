@@ -1,0 +1,302 @@
+[
+  {
+    "faq_id": "FAQ-001",
+    "question": "How do I track my order?",
+    "answer": "You can track your order using the 'Track Order' option in your account dashboard or via the tracking link sent in your confirmation email.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-002",
+    "question": "What should I do if my order is delayed?",
+    "answer": "If your order is delayed, please check the tracking status. If there is no update for 48 hours, contact our support team for assistance.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-003",
+    "question": "How do I cancel an order?",
+    "answer": "Orders can be canceled from the 'My Orders' page if they have not been shipped yet. Once shipped, cancellation is not possible.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-004",
+    "question": "How do I return a product?",
+    "answer": "You can initiate a return request from 'My Orders' within 7 days of delivery. Ensure the item is unused and in its original packaging.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-005",
+    "question": "When will I receive my refund?",
+    "answer": "Refunds are processed within 5-7 business days after we receive your returned product.",
+    "tags": ["refunds"]
+  },
+  {
+    "faq_id": "FAQ-006",
+    "question": "What payment methods are accepted?",
+    "answer": "We accept credit/debit cards, net banking, UPI, wallets, and cash on delivery in select regions.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-007",
+    "question": "Can I change my delivery address after placing an order?",
+    "answer": "You can change the delivery address before the order is shipped. Once shipped, the address cannot be changed.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-008",
+    "question": "How do I apply a discount coupon?",
+    "answer": "Enter your coupon code in the 'Apply Coupon' field at checkout. The discount will reflect before payment.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-009",
+    "question": "What if I receive a damaged product?",
+    "answer": "Please initiate a return request with photos of the damaged product within 48 hours of delivery.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-010",
+    "question": "Do you offer international shipping?",
+    "answer": "Yes, we ship internationally to selected countries. Shipping charges and delivery times vary by region.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-011",
+    "question": "How do I use my store credit?",
+    "answer": "Store credit is automatically applied at checkout if available in your account balance.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-012",
+    "question": "Can I exchange an item instead of returning it?",
+    "answer": "Yes, exchanges are available for certain products. You can request an exchange during the return process.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-013",
+    "question": "What are the delivery timeframes?",
+    "answer": "Standard delivery takes 3-5 business days, while express delivery takes 1-2 business days in eligible locations.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-014",
+    "question": "How do I reset my account password?",
+    "answer": "Click 'Forgot Password' on the login page and follow the instructions sent to your registered email.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-015",
+    "question": "How do I contact customer support?",
+    "answer": "You can reach us via chat, email, or our helpline number available on the 'Contact Us' page.",
+    "tags": ["support"]
+  },
+  {
+    "faq_id": "FAQ-016",
+    "question": "What are your return policies?",
+    "answer": "Items must be returned within 7 days in their original condition. Certain products like perishables are non-returnable.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-017",
+    "question": "Do you offer gift wrapping?",
+    "answer": "Yes, gift wrapping is available for select items during checkout for an additional fee.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-018",
+    "question": "How can I check my loyalty points?",
+    "answer": "Loyalty points are visible in your account dashboard under 'Rewards & Points'.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-019",
+    "question": "Can I pay in installments?",
+    "answer": "Yes, EMI options are available for select products on supported credit cards.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-020",
+    "question": "What happens if I miss a delivery?",
+    "answer": "If you miss a delivery attempt, the courier will retry or you can reschedule via the tracking page.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-021",
+    "question": "Are there any hidden charges?",
+    "answer": "No, all prices are inclusive of taxes. Additional charges only apply for express shipping or special services.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-022",
+    "question": "How do I redeem a gift card?",
+    "answer": "Enter your gift card code in the 'Gift Card' field during checkout.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-023",
+    "question": "How do I subscribe to your newsletter?",
+    "answer": "Scroll to the bottom of our website and enter your email in the newsletter subscription box.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-024",
+    "question": "What should I do if I receive the wrong item?",
+    "answer": "Raise a return request and mention 'Wrong Item' as the reason. We'll arrange a pickup and send the correct product.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-025",
+    "question": "Can I schedule delivery for a specific date?",
+    "answer": "Yes, scheduled delivery is available in select locations at checkout.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-026",
+    "question": "How do I update my contact details?",
+    "answer": "Go to 'My Account' > 'Profile' to edit your phone number, email, or address.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-027",
+    "question": "What if my refund is not credited?",
+    "answer": "Contact support with your order ID. Refunds may take longer due to bank processing delays.",
+    "tags": ["refunds"]
+  },
+  {
+    "faq_id": "FAQ-028",
+    "question": "Do you offer bulk discounts?",
+    "answer": "Yes, bulk orders qualify for special pricing. Contact our sales team for more details.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-029",
+    "question": "Are your products authentic?",
+    "answer": "Yes, all products sold are 100% authentic and sourced from verified suppliers.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-030",
+    "question": "Can I split payment between two methods?",
+    "answer": "Currently, we do not support split payments across multiple methods.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-031",
+    "question": "Do you provide invoices with GST details?",
+    "answer": "Yes, GST-compliant invoices are available for all orders and can be downloaded from your account.",
+    "tags": ["billing"]
+  },
+  {
+    "faq_id": "FAQ-032",
+    "question": "What products are non-returnable?",
+    "answer": "Personal care items, perishables, and customized products are non-returnable unless defective.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-033",
+    "question": "Can I pre-order items?",
+    "answer": "Yes, pre-order options are available for select products with estimated shipping dates mentioned.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-034",
+    "question": "What shipping partners do you use?",
+    "answer": "We partner with top logistics providers like FedEx, DHL, and Blue Dart to ensure safe delivery.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-035",
+    "question": "Can I get an early delivery?",
+    "answer": "Choose express delivery at checkout for faster shipping, subject to availability.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-036",
+    "question": "How do I delete my account?",
+    "answer": "Submit a deletion request through the 'Privacy & Account Settings' page in your profile.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-037",
+    "question": "Do you offer contactless delivery?",
+    "answer": "Yes, select 'Contactless Delivery' at checkout for a safe, no-contact drop-off.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-038",
+    "question": "What should I do if I forgot to apply my coupon?",
+    "answer": "Coupons cannot be applied after purchase. However, you can use it on your next order if valid.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-039",
+    "question": "Do you offer weekend delivery?",
+    "answer": "Yes, weekend delivery is available in select cities at no extra cost.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-040",
+    "question": "Can I change my payment method after placing an order?",
+    "answer": "Payment methods cannot be changed once an order is placed. You can cancel and reorder with a different method.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-041",
+    "question": "Are there seasonal sales or discounts?",
+    "answer": "Yes, we offer festive sales and exclusive discounts during major shopping events.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-042",
+    "question": "How do I request a duplicate invoice?",
+    "answer": "Duplicate invoices can be downloaded from your 'My Orders' page.",
+    "tags": ["billing"]
+  },
+  {
+    "faq_id": "FAQ-043",
+    "question": "How do I report a missing item in my order?",
+    "answer": "Raise a support ticket within 24 hours of delivery with your order ID and missing item details.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-044",
+    "question": "Do you charge for returns?",
+    "answer": "No, returns are free for eligible products within the return window.",
+    "tags": ["returns"]
+  },
+  {
+    "faq_id": "FAQ-045",
+    "question": "Can I request a specific courier for delivery?",
+    "answer": "Courier preference is not available currently. Deliveries are assigned automatically based on your location.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-046",
+    "question": "What happens if my payment fails?",
+    "answer": "If payment fails, the amount is automatically refunded to your original payment method within 5 business days.",
+    "tags": ["payments"]
+  },
+  {
+    "faq_id": "FAQ-047",
+    "question": "Can I change my email address?",
+    "answer": "Yes, email addresses can be updated in 'Account Settings' after verification.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FAQ-048",
+    "question": "Do you offer same-day delivery?",
+    "answer": "Same-day delivery is available in select metro cities for orders placed before 12 PM.",
+    "tags": ["delivery"]
+  },
+  {
+    "faq_id": "FAQ-049",
+    "question": "How do I know if a product is in stock?",
+    "answer": "Stock availability is shown on the product page. Out-of-stock items have a 'Notify Me' option.",
+    "tags": ["orders"]
+  },
+  {
+    "faq_id": "FAQ-050",
+    "question": "Do you ship to PO Boxes?",
+    "answer": "Currently, we do not deliver to PO Box addresses. Please provide a valid residential or commercial address.",
+    "tags": ["delivery"]
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "kb_id": "KB-001",
+    "title": "How to Initiate a Product Return",
+    "content": "Returning a product is simple through our online returns portal. Log in to your account, go to 'My Orders', and select the item you wish to return. Click 'Return/Exchange' and choose a reason from the dropdown menu (e.g., damaged, incorrect item, size issue). You will be prompted to upload photos if the product is defective or damaged. Once submitted, our team will verify your request within 24-48 hours. After approval, a reverse pickup will be scheduled, typically within 2-4 business days. Ensure the product is securely packed in its original packaging with all tags and accessories intact. Once the item reaches our warehouse and passes quality inspection, a refund or exchange will be processed as per your preference. Please note that certain items such as personal hygiene products, perishables, and customized goods are non-returnable. This step-by-step approach ensures a smooth return experience for all customers.",
+    "tags": ["returns"]
+  },
+  {
+    "kb_id": "KB-002",
+    "title": "Understanding the Refund Process",
+    "content": "Refunds are issued once a returned product passes quality checks or when an order is canceled before shipping. Refunds for prepaid orders are processed back to the original payment method (card, wallet, or UPI) within 5-7 business days. COD refunds are processed via bank transfer or store credit. If a refund is delayed, it is typically due to bank processing timelines, which can vary. We recommend checking your bank account statement and contacting your bank if delays persist. Refund confirmations are sent via email and SMS for transparency. For partial refunds, such as when an item is missing or damaged, we calculate the refund based on the affected item value only. Our refund policy ensures customer trust while maintaining robust fraud-prevention measures to safeguard transactions.",
+    "tags": ["refunds"]
+  },
+  {
+    "kb_id": "KB-003",
+    "title": "Tracking Your Shipment",
+    "content": "Once your order is shipped, you will receive a tracking ID via email and SMS. You can track your shipment through the 'Track Order' section in your account or by visiting the courier's tracking page using the provided ID. Tracking updates are typically refreshed every few hours, showing the package’s current location and estimated delivery date. If tracking information isn’t updated within 48 hours, contact our support team. Ensure you are available at the delivery address during the estimated window to avoid failed attempts. If you miss a delivery, the courier will retry within the next 24 hours or provide options to reschedule. For international shipments, customs clearance stages may appear in the tracking log and can slightly delay delivery.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-004",
+    "title": "How to Apply a Discount Coupon",
+    "content": "Coupons can be applied during checkout in the 'Apply Coupon' field. Enter the code exactly as provided (case-sensitive) and click 'Apply'. If the coupon is valid, the discount will reflect immediately in the order summary. Coupons may have specific terms, such as minimum purchase value, category restrictions, or expiry dates. Only one coupon can be applied per order unless explicitly stated otherwise. Coupons cannot be applied retroactively once an order is placed. If you encounter issues applying a valid coupon, clear your browser cache or try on a different device. Keep in mind that promotional codes from third-party websites may not be authorized or functional on our platform.",
+    "tags": ["payments"]
+  },
+  {
+    "kb_id": "KB-005",
+    "title": "Resetting Your Account Password",
+    "content": "If you've forgotten your account password, click 'Forgot Password' on the login page. Enter your registered email or phone number, and we'll send a password reset link or OTP. Follow the instructions in the email or SMS to set a new password. For enhanced security, create a strong password with at least 8 characters, including uppercase, lowercase, numbers, and symbols. Avoid using easily guessable information such as birthdays. If you do not receive the reset link within 5 minutes, check your spam folder or verify that your contact details are correct in your profile. Password resets expire within 30 minutes for security reasons, so request a new one if needed.",
+    "tags": ["account"]
+  },
+  {
+    "kb_id": "KB-006",
+    "title": "How to Exchange a Product",
+    "content": "Exchanging a product is similar to initiating a return. Navigate to 'My Orders', select the product, and click 'Return/Exchange'. Choose 'Exchange' and specify the required size or color variation (if available). Upload images if necessary and submit your request. Once approved, a reverse pickup will be arranged. After inspection of the returned item, your replacement will be dispatched within 2-3 business days, subject to stock availability. If the requested variant is unavailable, we will process a refund as per our refund policy. Please ensure that exchange requests are initiated within 7 days of delivery, and the item is unused and retains original packaging.",
+    "tags": ["returns"]
+  },
+  {
+    "kb_id": "KB-007",
+    "title": "Resolving Failed Payments",
+    "content": "Payment failures may occur due to insufficient funds, expired cards, incorrect details, or network issues. If a payment fails but your account is debited, it is usually reversed automatically within 48 hours. If not, contact support with your transaction ID. Double-check that your card is enabled for online transactions and that OTP or 3D Secure verification is completed promptly. For wallets or UPI, ensure sufficient balance and connectivity. If repeated failures occur, switch to an alternative payment method. For subscriptions, failed renewals require updating your saved payment details under 'Payment Methods'. We also recommend disabling ad blockers, as they may interfere with secure payment gateways.",
+    "tags": ["payments"]
+  },
+  {
+    "kb_id": "KB-008",
+    "title": "How to Update Delivery Address",
+    "content": "Delivery addresses can be updated in 'My Account' > 'Saved Addresses'. For active orders, address changes are allowed only if the order has not yet shipped. To update an address for an unshipped order, visit 'My Orders', select the order, and click 'Edit Address'. Provide accurate and complete details, including landmarks and contact numbers, to avoid delivery issues. For shipped orders, address changes are not possible, but you can request rescheduling through the courier’s tracking page. Maintaining updated address records ensures faster checkouts and minimizes failed delivery attempts.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-009",
+    "title": "Understanding Store Credit Usage",
+    "content": "Store credits are issued for eligible refunds or promotional campaigns and can be used to pay for future purchases. At checkout, available store credits are automatically applied, reducing your payable amount. If your order value exceeds your store credit balance, you can pay the difference using other payment methods. Store credits cannot be withdrawn or transferred between accounts and expire after 12 months. If store credits fail to apply automatically, ensure you're logged into the correct account. Credits used on canceled orders will be refunded back to your store credit balance.",
+    "tags": ["payments"]
+  },
+  {
+    "kb_id": "KB-010",
+    "title": "Steps to Verify Your Email Address",
+    "content": "Email verification is essential for receiving order confirmations, shipping updates, and account security alerts. To verify your email, log into your account, navigate to 'Profile Settings', and click 'Verify Email'. You will receive a verification email with a secure link valid for 24 hours. Click the link to confirm your email. If you don't see the email, check your spam folder or whitelist our domain. Verification ensures your account is secure and eligible for promotional offers. Unverified emails may limit certain account features.",
+    "tags": ["account"]
+  },
+  {
+    "kb_id": "KB-011",
+    "title": "Handling Damaged Deliveries",
+    "content": "If a product arrives damaged, initiate a return request within 48 hours of delivery through 'My Orders'. Include clear images of the damaged product and packaging. Our team will verify your claim and arrange a free reverse pickup. Once received, you can opt for a replacement or refund. For high-value items like electronics, damage assessment may involve coordination with authorized service centers. Always inspect packages upon delivery and reject visibly damaged shipments while notifying the delivery agent. Prompt reporting ensures faster resolution.",
+    "tags": ["returns"]
+  },
+  {
+    "kb_id": "KB-012",
+    "title": "International Shipping Guidelines",
+    "content": "International orders are shipped via trusted logistics partners and may take 7-15 business days, excluding customs delays. Customs duties, import taxes, and clearance fees are the customer’s responsibility. We provide all necessary invoices and documentation to facilitate clearance but cannot influence local customs decisions. Tracking updates may pause during customs processing but will resume once cleared. Ensure your local contact number is provided to expedite communication with customs authorities. Refusal to pay duties may result in the order being returned, and refunds will exclude shipping charges.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-013",
+    "title": "How to Cancel a Pending Order",
+    "content": "Orders can be canceled from 'My Orders' if they are in 'Processing' status and not yet shipped. Click 'Cancel Order', select a reason, and confirm. For prepaid orders, refunds are processed automatically to the original payment method within 5-7 business days. COD orders require no refund processing. Once an order is marked 'Shipped', it cannot be canceled, but you can refuse delivery. For customized products, cancellations must be made within 12 hours of placing the order to avoid production charges.",
+    "tags": ["returns", "refunds"]
+  },
+  {
+    "kb_id": "KB-014",
+    "title": "Loyalty Program and Reward Points",
+    "content": "Earn points for every purchase and redeem them for discounts on future orders. Points are credited 24 hours after order delivery and expire after 12 months of inactivity. You can track your points in 'Rewards' under your account dashboard. Redemption options appear automatically during checkout. Points are non-transferable and cannot be exchanged for cash. Promotional items, discounted products, and refunded orders do not earn points. Misuse of the loyalty program may result in forfeiture of points and account suspension.",
+    "tags": ["account"]
+  },
+  {
+    "kb_id": "KB-015",
+    "title": "Refund Escalation Process",
+    "content": "If your refund has not been credited within 10 business days, visit the 'Refund Support' section under 'Help'. Provide your order ID, refund confirmation email, and transaction reference. Our team will verify your request and liaise with the payment provider. If the issue persists, we may issue store credits as an interim solution while continuing to resolve the original refund. Refund escalation cases are prioritized, and updates are provided within 48 hours of filing the complaint.",
+    "tags": ["refunds"]
+  },
+  {
+    "kb_id": "KB-016",
+    "title": "Verifying Saved Payment Methods",
+    "content": "For faster checkouts, you can save payment methods under 'Payment Settings'. We use secure encryption to protect your data. Before saving a card, we perform a small authorization check to verify validity, which is reversed immediately. Saved payment methods can be deleted anytime. If your saved card expires or is replaced, update it promptly to avoid failed transactions. We recommend enabling two-factor authentication with your bank for added payment security.",
+    "tags": ["payments"]
+  },
+  {
+    "kb_id": "KB-017",
+    "title": "Delivery Rescheduling Options",
+    "content": "If you are unavailable during delivery, use the tracking page to reschedule or redirect to an alternate address (if allowed by the courier). Rescheduling is permitted only once per shipment. If delivery fails twice, the package will return to our warehouse, and reshipment charges may apply. Always update your contact details and provide delivery instructions, such as preferred time slots, in advance for smoother fulfillment.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-018",
+    "title": "How to Verify Your Phone Number",
+    "content": "Verifying your phone number ensures you receive OTPs, delivery updates, and security alerts. To verify, go to 'Profile Settings', click 'Verify Phone', and enter the OTP sent to your registered number. Phone verification is mandatory for COD orders and account recovery. If you change your phone number, re-verification is required before it can be used for transactions or order updates.",
+    "tags": ["account"]
+  },
+  {
+    "kb_id": "KB-019",
+    "title": "Partial Refund Scenarios Explained",
+    "content": "Partial refunds apply when certain items in an order are missing, damaged, or canceled while others are fulfilled. The refund amount corresponds only to the affected items. For bundled offers, the refund is adjusted based on discounted pricing rather than individual product value. Partial refunds follow the same 5-7 business day timeline as full refunds and are credited to the original payment method or store credit, depending on your initial payment type.",
+    "tags": ["refunds"]
+  },
+  {
+    "kb_id": "KB-020",
+    "title": "Changing Your Account Email",
+    "content": "To update your registered email, go to 'Profile Settings' and select 'Change Email'. Enter the new email and verify it using the secure link sent to your inbox. Once verified, all future communications will be directed to the updated address. Ensure your new email is active and accessible, as unverified changes will revert to the old email automatically.",
+    "tags": ["account"]
+  },
+  {
+    "kb_id": "KB-021",
+    "title": "Understanding Contactless Delivery",
+    "content": "Contactless delivery allows packages to be left at your doorstep or designated location without requiring a signature. Opt for this during checkout. COD orders for contactless delivery must be prepaid digitally. Once delivered, you will receive proof-of-delivery photos via email or app notifications. This option is highly recommended for minimizing contact and ensuring safety during deliveries.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-022",
+    "title": "Resolving Address-Related Delivery Issues",
+    "content": "Failed deliveries often occur due to incomplete or incorrect addresses. Always provide accurate street details, landmarks, and a reachable phone number. If an order is returned due to address errors, you can request reshipment by updating your address and paying applicable shipping charges. For multi-unit apartments, ensure building entry instructions are added.",
+    "tags": ["shipping"]
+  },
+  {
+    "kb_id": "KB-023",
+    "title": "Common Return Rejection Reasons",
+    "content": "Returns may be rejected if products show signs of use, are missing tags/accessories, or fall under the non-returnable category (e.g., personal hygiene items). Items returned beyond the 7-day window or damaged due to customer mishandling are also ineligible. Always follow packaging guidelines and initiate returns within the specified timeframe to avoid rejections.",
+    "tags": ["returns"]
+  },
+  {
+    "kb_id": "KB-024",
+    "title": "Understanding Gift Card Payments",
+    "content": "Gift cards can be redeemed at checkout by entering the unique code. If your order exceeds the gift card value, pay the balance using another method. Gift cards are non-refundable and cannot be used to purchase additional gift cards or subscriptions. They expire 12 months after issue and are valid only for eligible products.",
+    "tags": ["payments"]
+  },
+  {
+    "kb_id": "KB-025",
+    "title": "How to Request Account Deletion",
+    "content": "To permanently delete your account, navigate to 'Privacy Settings' and submit a deletion request. Once verified, your account and personal data will be removed within 7 business days, except for legally required records. Account deletion is irreversible, and you will lose all loyalty points, store credits, and saved addresses. Ensure all pending orders are completed or canceled before initiating deletion.",
+    "tags": ["account"]
+  }
+]

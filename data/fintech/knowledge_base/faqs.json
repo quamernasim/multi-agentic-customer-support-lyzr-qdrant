@@ -1,0 +1,302 @@
+[
+  {
+    "faq_id": "FIN-FAQ-001",
+    "question": "How do I reset my net banking password?",
+    "answer": "Use the 'Forgot Password' option on the login page, verify with your registered mobile number and OTP, then set a new secure password. Passwords must be alphanumeric and include at least one special character.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-002",
+    "question": "What is the daily UPI transaction limit?",
+    "answer": "The daily UPI limit is ₹1 lakh per user across all apps, as per NPCI guidelines. However, some banks may impose lower limits based on account type or risk assessment.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-003",
+    "question": "How can I report a fraudulent transaction?",
+    "answer": "Immediately call our 24x7 helpline or use the mobile banking app to block your card or freeze your account. Then submit a dispute form under the 'Fraud Report' section for investigation.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-004",
+    "question": "How do I increase my credit card limit?",
+    "answer": "Submit a limit enhancement request via the mobile app or customer support. Eligibility is assessed based on your credit score, repayment history, and submitted income proof.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-005",
+    "question": "Can I update my KYC details online?",
+    "answer": "Yes. You can complete video KYC or upload scanned documents (ID proof, address proof) via net banking. Approval is typically granted within 24–48 hours.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-006",
+    "question": "How long does it take to get a refund for a failed transaction?",
+    "answer": "Refunds for failed UPI or IMPS transactions are usually processed within 3–5 business days. Delays beyond this period should be reported to support with transaction details.",
+    "tags": ["transactions", "refund"]
+  },
+  {
+    "faq_id": "FIN-FAQ-007",
+    "question": "What should I do if my card is lost or stolen?",
+    "answer": "Block your card immediately using the app or by calling our hotline. A replacement card will be issued, and any fraudulent charges after reporting will be fully refunded.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-008",
+    "question": "How can I check my loan EMI schedule?",
+    "answer": "Log into net banking or the mobile app, navigate to 'Loan Accounts', and select your loan to view the EMI breakdown, due dates, and outstanding principal.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-009",
+    "question": "What is tokenization for card payments?",
+    "answer": "Tokenization replaces your actual card number with a secure token for online or NFC payments, reducing the risk of fraud if merchant systems are breached.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-010",
+    "question": "How do I enable international card usage?",
+    "answer": "International usage is disabled by default. You can enable it temporarily for travel or online shopping via your mobile app settings under 'Card Controls'.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-011",
+    "question": "What should I do if I forget my UPI PIN?",
+    "answer": "Open your UPI app, select 'Reset PIN', verify using your debit card details and OTP, then set a new secure PIN for transactions.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-012",
+    "question": "Can I block my account if I detect unauthorized activity?",
+    "answer": "Yes. Use the 'Emergency Block' option in the app or call support to temporarily freeze your account until further verification is completed.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-013",
+    "question": "How can I download my account statements?",
+    "answer": "Statements are available in PDF format in net banking or the mobile app. Navigate to 'Statements', select your date range, and download securely.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-014",
+    "question": "What is the grievance redressal timeline for disputes?",
+    "answer": "Disputes are acknowledged within 24 hours and resolved in 7–15 business days depending on complexity, per RBI guidelines.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-015",
+    "question": "How do I activate two-factor authentication?",
+    "answer": "Two-factor authentication is enabled by default for all digital transactions and logins, requiring OTP or biometric verification.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-016",
+    "question": "How do I track my refund status?",
+    "answer": "Refund statuses are visible in the 'Transaction History' section. Failed refunds beyond SLA can be escalated via a support ticket.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-017",
+    "question": "How do I dispute a merchant overcharge?",
+    "answer": "Raise a dispute with transaction details, receipts, and overcharge proof via the app. The bank coordinates with the merchant to resolve within 10 days.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-018",
+    "question": "What is the liability for unauthorized card use?",
+    "answer": "If reported within 3 days, you incur zero liability. Delays in reporting may lead to partial liability as per RBI norms.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-019",
+    "question": "How do I change my registered mobile number?",
+    "answer": "Submit an online request using OTP verification, or visit a branch with ID proof to update your mobile number linked to your account.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-020",
+    "question": "Can I temporarily block my debit card?",
+    "answer": "Yes. Use 'Card Management' in the app to place a temporary block, which can be lifted later without reissuing the card.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-021",
+    "question": "How do I enable UPI AutoPay?",
+    "answer": "In your UPI app, authorize the merchant mandate request with your PIN. Mandates can be modified or canceled anytime.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-022",
+    "question": "What happens if my KYC expires?",
+    "answer": "Accounts with expired KYC are restricted for withdrawals and high-value transfers. Update via online video KYC or branch visit.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-023",
+    "question": "How do I report phishing emails?",
+    "answer": "Forward suspicious emails to phishing@bank.com. Never click links or share credentials contained in such emails.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-024",
+    "question": "Can I reverse an incorrect fund transfer?",
+    "answer": "Transfers to incorrect accounts can only be reversed with the recipient’s consent. Raise a request immediately to initiate interbank escalation.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-025",
+    "question": "How do I set spending limits on my card?",
+    "answer": "Use 'Card Controls' in the app to adjust daily POS, ATM, and online transaction limits instantly.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-026",
+    "question": "How can I check if my refund has been processed?",
+    "answer": "Refunds reflect in your account ledger and appear in transaction history. Push notifications are sent upon successful credit.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-027",
+    "question": "How do I secure my account from SIM swap fraud?",
+    "answer": "Enable SIM binding, always set strong MPIN/UPI PIN, and report any sudden network loss to both your bank and telecom provider.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-028",
+    "question": "Can I request a duplicate card statement?",
+    "answer": "Yes. Card statements can be downloaded anytime from net banking or requested to be emailed securely.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-029",
+    "question": "What documents are required for card replacement?",
+    "answer": "For standard replacements, no documents are needed. For fraud cases, a signed dispute form and ID proof may be required.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-030",
+    "question": "How do I check my credit card reward points?",
+    "answer": "Log in to the app or net banking and navigate to 'Rewards' to view earned points, redemption catalog, and expiry dates.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-031",
+    "question": "How can I cancel an active UPI mandate?",
+    "answer": "Go to 'Mandates' in your UPI app, select the active mandate, and tap 'Cancel'. Cancellations are effective instantly.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-032",
+    "question": "Can I get SMS alerts for all card transactions?",
+    "answer": "Yes. SMS and email alerts are sent for every transaction, regardless of value, to ensure transparency and security.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-033",
+    "question": "How do I update my email ID for communication?",
+    "answer": "Update your email ID via net banking settings or visit a branch with valid ID proof for manual changes.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-034",
+    "question": "What is the refund timeline for failed POS swipes?",
+    "answer": "Refunds for failed POS swipes generally take 5–7 working days after verification with the merchant acquirer.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-035",
+    "question": "How do I report an unauthorized UPI debit?",
+    "answer": "Freeze your UPI account via the app and raise a fraud complaint with transaction ID. Investigation takes 7–15 days.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-036",
+    "question": "Can I link multiple cards to one account?",
+    "answer": "Yes. You can link multiple debit and credit cards to the same account for consolidated management.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-037",
+    "question": "How do I know if my refund is auto-processed?",
+    "answer": "Check your app’s notification center and transaction history for refund status updates without manual intervention.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-038",
+    "question": "How can I report suspicious login attempts?",
+    "answer": "Unrecognized login alerts can be flagged via the app. Your account will be locked until verified for safety.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-039",
+    "question": "What are the security measures for online banking?",
+    "answer": "We enforce encryption, timed logout, device binding, and 2FA to ensure safe banking sessions for customers.",
+    "tags": ["account"]
+  },
+  {
+    "faq_id": "FIN-FAQ-040",
+    "question": "How do I block my UPI ID permanently?",
+    "answer": "Submit a closure request in your UPI app under 'Manage ID'. Once blocked, it cannot be reused or reactivated.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-041",
+    "question": "Can I set up auto-debit for utility bills?",
+    "answer": "Yes. Use UPI AutoPay or net banking standing instructions for automated utility bill payments.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-042",
+    "question": "How do I change my ATM PIN?",
+    "answer": "Visit any ATM, choose 'PIN Change', and authenticate using OTP or existing PIN. Alternatively, use the mobile app.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-043",
+    "question": "How do I protect my account from malware?",
+    "answer": "Avoid using public Wi-Fi for transactions, keep anti-virus updated, and never download unverified apps linked to banking.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-044",
+    "question": "What is the process for instant refunds?",
+    "answer": "UPI refunds are instant once initiated by the merchant, while card refunds may take 3–5 working days.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-045",
+    "question": "Can I get a virtual debit card?",
+    "answer": "Yes. Generate a virtual card via the app for secure online shopping without exposing your physical card details.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-046",
+    "question": "How can I verify a refund credit?",
+    "answer": "Refunds appear with transaction descriptions like 'REV' or 'REFUND' in your ledger and can be filtered in history.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-047",
+    "question": "What should I do if my account is hacked?",
+    "answer": "Immediately block all access, reset your password, and contact support for forensic review and account restoration.",
+    "tags": ["fraud"]
+  },
+  {
+    "faq_id": "FIN-FAQ-048",
+    "question": "Can I split my credit card bill into EMIs?",
+    "answer": "Yes. Choose 'Convert to EMI' under your card statement in-app. EMI plans range from 3 to 24 months with applicable fees.",
+    "tags": ["cards"]
+  },
+  {
+    "faq_id": "FIN-FAQ-049",
+    "question": "What is the max limit for fund transfers?",
+    "answer": "NEFT and IMPS limits vary by account type. UPI caps at ₹1 lakh per day as per NPCI.",
+    "tags": ["transactions"]
+  },
+  {
+    "faq_id": "FIN-FAQ-050",
+    "question": "How do I secure my net banking password?",
+    "answer": "Change it every 90 days, avoid sharing it, and ensure it's unique and not used for other sites.",
+    "tags": ["account"]
+  }
+]

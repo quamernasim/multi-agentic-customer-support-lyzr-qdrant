@@ -1,0 +1,302 @@
+[
+  {
+    "policy_id": "FIN-POL-001",
+    "title": "Failed Transaction Refund Policy",
+    "description": "If a digital transaction (UPI, IMPS, NEFT, or card payment) fails but the amount is debited, customers are entitled to an automatic refund within 3–5 business days. Refunds will always be credited back to the original payment method. In exceptional cases involving inter-bank delays, refunds may take up to 7 working days in compliance with NPCI and RBI guidelines. Customers should provide the transaction reference number and screenshots of debit confirmations to expedite resolution. If the refund is delayed beyond the stated period, customers can escalate through the bank’s grievance portal. No fees or charges apply for such refunds.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-002",
+    "title": "Debit and Credit Card Fraud Liability Policy",
+    "description": "Customers must report unauthorized card transactions within 3 calendar days of detection to avoid financial liability. Upon prompt reporting, the customer bears zero liability as per RBI guidelines. Delays in reporting may result in limited liability proportional to the delay. The bank will block the compromised card immediately and initiate dispute investigation. Temporary credit is provided within 10 days pending case closure. Customers must submit ID proof, transaction details, and a dispute declaration form. Investigations typically conclude in 30 working days.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-003",
+    "title": "Card Usage and Limit Policy",
+    "description": "Credit and debit cards are dynamically assigned spending limits based on account standing and customer risk profiling. Temporary limit enhancements for planned purchases can be requested through mobile banking or customer care. International usage must be activated separately for security purposes. Cards must never be shared or given to third parties. Exceeding daily or monthly spending caps results in automatic declines to prevent misuse.",
+    "tags": ["cards"]
+  },
+  {
+    "policy_id": "FIN-POL-004",
+    "title": "KYC and Privacy Verification Policy",
+    "description": "Customers are required to maintain up-to-date KYC documentation including valid government-issued ID, address proof, and a photograph. Accounts with expired KYC will face restrictions such as blocked transactions and limited withdrawals until updated. The bank offers both online (video KYC) and offline methods for document submission. All KYC data is encrypted and stored per national privacy regulations. Unauthorized disclosure of KYC details is strictly prohibited and punishable under data protection laws.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-005",
+    "title": "Chargeback and Merchant Dispute Policy",
+    "description": "Customers can initiate chargebacks for card-based transactions involving duplicate billing, fraudulent usage, or undelivered merchant goods/services. Requests must be raised within 30 days of transaction date. The bank works with Visa/MasterCard networks to review claims and may require supporting documents such as proof of non-delivery or merchant correspondence. Chargeback investigations typically resolve within 45 days. Interim credits may be issued where applicable.",
+    "tags": ["refunds","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-006",
+    "title": "UPI Transaction Reversal Policy",
+    "description": "In cases of failed UPI payments where the amount is debited, refunds are initiated automatically via NPCI within 24–48 hours. Customers are advised to check their bank statements for credit. If refunds exceed 72 hours, a support ticket can be raised with the transaction reference ID. Refunds delayed beyond regulatory timelines will attract penalty credits as per RBI compensation guidelines.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-007",
+    "title": "Two-Factor Authentication Privacy Policy",
+    "description": "All online transactions mandate two-factor authentication (2FA) via OTP, biometric, or token approval. Customer authentication data is encrypted and never stored in plaintext. The bank does not request OTPs over calls or emails. Sharing OTPs compromises account security and violates privacy standards. Customers must immediately report suspicious OTP requests to prevent phishing-related fraud.",
+    "tags": ["privacy","fraud"]
+  },
+  {
+    "policy_id": "FIN-POL-008",
+    "title": "ATM Withdrawal Failure Refund Policy",
+    "description": "If an ATM withdrawal fails but the customer’s account is debited, refunds are automatically processed within 5 business days. For off-us transactions (different bank ATMs), refunds may take up to 7 business days. Customers should retain transaction slips or SMS alerts to validate claims. Disputes exceeding SLA timelines qualify for compensation as per RBI’s failed transaction compensation norms.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-009",
+    "title": "Lost or Stolen Card Policy",
+    "description": "Customers must report lost or stolen debit/credit cards immediately through mobile banking or the 24x7 helpline. Cards reported lost are permanently blocked and reissued. Fraudulent charges post-reporting are fully refunded under zero liability policy. Pre-report fraudulent charges are refunded only if reported within 3 days. A replacement card fee may apply unless waived for verified fraud.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-010",
+    "title": "Data Privacy and Encryption Policy",
+    "description": "All customer information, including personal, transactional, and biometric data, is encrypted using AES-256 standards in compliance with data protection laws. Access to sensitive data is restricted to authorized personnel only. The bank conducts quarterly security audits to ensure zero breaches. Any detected breach is immediately reported to regulatory authorities and affected customers are notified within 72 hours.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-011",
+    "title": "Unauthorized Transaction Handling Policy",
+    "description": "If customers detect any unauthorized debits or credits, they must notify the bank immediately through official channels (mobile banking, email, or call center). Upon verification, accounts will be temporarily frozen to prevent further losses. Investigation teams review transaction metadata including IP, geolocation, and device signatures to identify fraud patterns. Customers will be credited provisional amounts within 10 working days pending final investigation. Persistent fraud accounts may undergo extended monitoring.",
+    "tags": ["fraud","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-012",
+    "title": "Refund Policy for Failed Standing Instructions",
+    "description": "Failed standing instructions (SIs) for recurring payments such as loan EMIs or utility bills are eligible for automatic reversal within 3 working days. Refunds are credited to the originating account after validation. Customers must ensure sufficient balance and active mandates to avoid penalties. The bank is not liable for merchant late fees if delays are due to insufficient funds.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-013",
+    "title": "EMI Conversion Policy for Card Transactions",
+    "description": "Eligible card transactions above a specified threshold can be converted into EMIs through the mobile app or by contacting customer care. Conversion must be requested within 7 days of the transaction date. Interest rates and processing fees vary based on tenure. Early foreclosure of EMIs is allowed but may involve nominal pre-closure charges.",
+    "tags": ["cards","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-014",
+    "title": "Phishing and Online Fraud Protection Policy",
+    "description": "The bank actively monitors phishing campaigns and takes proactive measures to block fraudulent domains impersonating its services. Customers are regularly informed via SMS and email about the dangers of clicking unverified links or sharing credentials. Reported phishing attempts are investigated and forwarded to law enforcement. Compensation is provided for losses only when negligence is not attributed to the customer.",
+    "tags": ["fraud","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-015",
+    "title": "International Card Transaction Policy",
+    "description": "International transactions are disabled by default for new cards. Customers can enable them temporarily via the app for planned foreign travel or online purchases. Cross-border usage attracts additional FX conversion fees and may be subject to security holds for verification. Transactions originating from sanctioned regions are automatically declined.",
+    "tags": ["cards"]
+  },
+  {
+    "policy_id": "FIN-POL-016",
+    "title": "Refund Policy for Duplicate Debits",
+    "description": "In case of duplicate debits due to system or merchant errors, customers should immediately report the incident with transaction reference IDs. Refunds are processed within 5 working days after validation with the payment gateway. If merchant cooperation is required, timelines may extend to 10 days.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "FIN-POL-017",
+    "title": "Customer Data Retention and Privacy Policy",
+    "description": "The bank retains customer transactional and personal data only as long as required by regulatory compliance. Data older than mandated periods is anonymized or securely purged. Customers have the right to request access to their data or seek deletion (where legally permitted). Requests are addressed within 30 days of submission.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-018",
+    "title": "Lost Mobile Device Linked to Banking Policy",
+    "description": "If a customer's registered mobile device is lost or stolen, they must immediately notify the bank to de-link the device. Until reported, the bank is not liable for unauthorized UPI or app transactions. Post-report, device access is blocked instantly, and a secure re-registration process is initiated with multi-factor authentication.",
+    "tags": ["fraud","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-019",
+    "title": "Dispute Resolution for Merchant Refunds",
+    "description": "For card or UPI-based merchant refunds not received within 7 business days, customers can lodge a dispute. The bank will verify merchant reversal requests through NPCI or card networks and credit provisional amounts if delays persist. Supporting documents such as merchant refund confirmations may be required.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-020",
+    "title": "Temporary Card Blocking Policy",
+    "description": "Customers can temporarily block their debit or credit cards via mobile banking in case of suspected fraud or misplaced cards. Temporary blocks can be lifted within 24 hours once verified. If unreported beyond 7 days, the block is converted to permanent closure and a new card is issued.",
+    "tags": ["cards","fraud"]
+  },
+  {
+    "policy_id": "FIN-POL-021",
+    "title": "UPI Auto-Pay Refund Policy",
+    "description": "Refunds for failed UPI auto-pay debits are automatically credited within 2 working days. If the merchant cancels a mandate, refunds of excess collected payments are processed back to the customer account within 5 business days. For disputes, NPCI-mandated arbitration timelines apply.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-022",
+    "title": "Card PIN Security and Privacy Policy",
+    "description": "Customers must never disclose their card PIN or CVV to third parties. The bank does not request PIN details via calls, emails, or SMS. Customers can change their PIN at any ATM or mobile app. Any compromised PIN incidents must be reported immediately to avoid fraudulent misuse.",
+    "tags": ["cards","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-023",
+    "title": "Fraudulent Loan Application Policy",
+    "description": "If customers detect unauthorized loan accounts opened in their name, they must submit a fraud affidavit and supporting ID proofs. The bank investigates and freezes such accounts within 48 hours. Victims incur zero liability for unauthorized borrowings and related dues. Police FIRs may be required for final resolution.",
+    "tags": ["fraud"]
+  },
+  {
+    "policy_id": "FIN-POL-024",
+    "title": "Failed ATM Withdrawal Refund Escalation Policy",
+    "description": "Refunds for failed ATM withdrawals not credited within 7 working days can be escalated through the bank’s grievance cell or RBI Ombudsman. Compensation of ₹100 per day of delay applies beyond stipulated timelines. Customers must provide ATM ID and timestamp for quicker resolution.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "FIN-POL-025",
+    "title": "Secure Online Payment Privacy Policy",
+    "description": "All online card and net banking transactions are routed via PCI-DSS certified gateways. Customer card details are tokenized and not stored in merchant systems. The bank enforces strong encryption to prevent man-in-the-middle attacks during transactions.",
+    "tags": ["privacy","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-026",
+    "title": "Refund Policy for Failed IMPS Transfers",
+    "description": "IMPS transactions failing due to incorrect beneficiary details or server errors are auto-reversed within 24 hours. For cross-bank delays, reversals may take up to 3 working days. Customers must verify account details before initiating payments to prevent errors.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-027",
+    "title": "Card Replacement for Fraud Cases Policy",
+    "description": "For verified fraud cases involving debit or credit cards, replacement cards are issued free of cost. Fraudulent transactions are refunded based on liability rules, and dispute forms must be submitted promptly. All compromised card numbers are permanently blacklisted.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-028",
+    "title": "Customer Consent and Data Sharing Policy",
+    "description": "Customer data is shared with third parties only for regulatory compliance or service delivery, such as payment processors. Explicit consent is obtained before any data sharing. Opt-out mechanisms are provided for non-mandatory marketing communications.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-029",
+    "title": "Charge Reversal for Unauthorized POS Transactions",
+    "description": "Charges for unauthorized POS debits are reversed upon verification. Customers must submit chargeback requests within 3 business days to ensure eligibility for zero liability. Delays beyond stipulated timelines may result in partial refunds as per RBI liability norms.",
+    "tags": ["fraud","refunds"]
+  },
+  {
+    "policy_id": "FIN-POL-030",
+    "title": "Tokenization for Card Security Policy",
+    "description": "The bank supports card tokenization for secure online payments. Customers can tokenize their cards via supported merchants to mask real card numbers. Tokens are unique to each merchant and prevent exposure during breaches.",
+    "tags": ["cards","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-031",
+    "title": "UPI Fraud Investigation Policy",
+    "description": "In cases of UPI fraud, accounts are temporarily frozen and disputed transactions investigated with NPCI. Customers must submit signed declarations and ID proofs. Resolution timelines range from 7–15 business days depending on complexity.",
+    "tags": ["fraud","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-032",
+    "title": "Auto-Reversal Policy for Declined Payments",
+    "description": "Payments declined due to insufficient balance or network errors automatically reverse within 24 hours. Customers are advised to maintain adequate funds to prevent failed debits. Refund credits reflect instantly for intra-bank and within 2–3 days for inter-bank transfers.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-033",
+    "title": "Customer Email Privacy and Phishing Policy",
+    "description": "The bank never requests login credentials or account details over email. Any such email should be reported immediately to phishing@bank.com. Verified phishing sources are blocked at the email server level, and customers are notified of remediation actions taken.",
+    "tags": ["privacy","fraud"]
+  },
+  {
+    "policy_id": "FIN-POL-034",
+    "title": "Refund for Failed Card Payments Policy",
+    "description": "Failed card payments due to merchant or network errors are refunded within 5–7 working days. Refund processing speed depends on merchant acquirer response times. Interim credits are issued in case of prolonged delays beyond SLA timelines.",
+    "tags": ["refunds","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-035",
+    "title": "Lost Cheque Privacy Policy",
+    "description": "If a customer loses a cheque or cheque book, they must request a stop-payment immediately. Sensitive cheque information is masked in bank records, and unused cheques are marked invalid to prevent misuse.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-036",
+    "title": "Instant Fraud Alerts Policy",
+    "description": "The bank sends instant SMS/email alerts for all suspicious transactions, including high-value transfers and foreign logins. Customers must confirm such alerts within 30 minutes, failing which accounts may be auto-blocked.",
+    "tags": ["fraud"]
+  },
+  {
+    "policy_id": "FIN-POL-037",
+    "title": "Refund Policy for Duplicate EMI Debits",
+    "description": "In rare cases where loan EMI auto-debits occur twice, refunds are initiated automatically within 2–4 business days. Customers may also request refund acceleration through support channels by providing debit transaction IDs.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-038",
+    "title": "International Card Fraud Liability Policy",
+    "description": "International card fraud cases are fully refunded if reported within 3 business days of detection. Beyond this period, liability may partially fall on the customer. Cards used for fraudulent transactions are blocked permanently.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-039",
+    "title": "Secure Password Privacy Policy",
+    "description": "Customers are required to set strong alphanumeric passwords and avoid reuse across services. The bank enforces periodic password resets every 180 days. Login credentials are hashed using SHA-512 and never stored in plaintext.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-040",
+    "title": "POS Dispute Refund Policy",
+    "description": "POS disputes must be raised within 30 days of transaction. The bank liaises with merchants to validate disputes and processes interim refunds within 10 days for valid claims. Invalid disputes may attract penalty fees.",
+    "tags": ["refunds","cards"]
+  },
+  {
+    "policy_id": "FIN-POL-041",
+    "title": "Fraud Detection and AI Monitoring Policy",
+    "description": "AI-based fraud detection monitors transaction anomalies including unusual spend patterns or geolocation mismatches. Suspicious accounts are flagged for review, and transactions may be temporarily held pending confirmation.",
+    "tags": ["fraud","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-042",
+    "title": "Refund Escalation for NPCI Transactions Policy",
+    "description": "UPI/IMPS refund delays exceeding 5 days are escalated to NPCI for arbitration. Customers receive interim credits while disputes are resolved. NPCI arbitration typically resolves within 10–15 business days.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-043",
+    "title": "Virtual Card Privacy and Security Policy",
+    "description": "Virtual debit cards provide an added layer of privacy for online transactions by masking actual card details. Customers can generate disposable virtual cards valid for a single transaction or limited duration.",
+    "tags": ["cards","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-044",
+    "title": "Merchant Overcharge Refund Policy",
+    "description": "Overcharges by merchants detected through billing discrepancies qualify for refunds. Customers must submit merchant invoices for verification. Once confirmed, refunds are credited within 7 working days.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "FIN-POL-045",
+    "title": "Account Breach and Recovery Policy",
+    "description": "Accounts suspected of being breached undergo forced password reset, device re-authentication, and two-factor re-enablement. Customers may be required to visit the branch for biometric verification in high-severity cases.",
+    "tags": ["fraud","privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-046",
+    "title": "Refund for Reversed Loan Payments Policy",
+    "description": "Loan prepayments or foreclosure payments wrongly debited are refunded within 5–7 days after reconciliation. Customers must share loan account details and debit confirmations to expedite refunds.",
+    "tags": ["refunds"]
+  },
+  {
+    "policy_id": "FIN-POL-047",
+    "title": "Online Banking Session Privacy Policy",
+    "description": "Online banking sessions auto-expire after 5 minutes of inactivity. Browser fingerprinting prevents simultaneous logins from multiple devices. Sensitive sessions are shielded from keyloggers and screen-scrapers using anti-malware APIs.",
+    "tags": ["privacy"]
+  },
+  {
+    "policy_id": "FIN-POL-048",
+    "title": "Fraudulent Beneficiary Blocking Policy",
+    "description": "Beneficiaries reported as fraudulent are permanently blocked and blacklisted in the bank’s internal and NPCI systems. Refunds for fraud transfers depend on recovery from the beneficiary account.",
+    "tags": ["fraud","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-049",
+    "title": "Refund Policy for Payment Gateway Errors",
+    "description": "Gateway downtime or technical errors resulting in failed debits are refunded within 48 hours. If funds are stuck with the merchant acquirer, timelines extend to 3–5 business days.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "policy_id": "FIN-POL-050",
+    "title": "Contactless Card Security Policy",
+    "description": "Contactless card transactions below ₹5,000 do not require PIN authentication. Customers should enable spending alerts to monitor usage and promptly report unauthorized tap-and-pay transactions.",
+    "tags": ["cards","fraud"]
+  }
+]

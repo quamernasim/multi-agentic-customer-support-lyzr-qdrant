@@ -1,0 +1,102 @@
+ticket_id,customer_id,opened_date,closed_date,issue_summary,status,priority,resolution_notes,category,assigned_agent,resolution_time_hours
+FIN-TCK-1001,FIN-CUST-001,2025-07-25,2025-07-26,"Failed UPI transaction but amount debited",Closed,High,"Reversed transaction in 24 hrs",Transactions,Agent-FIN-07,5
+FIN-TCK-1002,FIN-CUST-002,2025-07-27,2025-07-28,"Credit card declined at POS terminal",Closed,Medium,"Unblocked card and updated limits",Cards,Agent-FIN-12,8
+FIN-TCK-1003,FIN-CUST-003,2025-07-26,2025-07-30,"Unable to reset net banking password",Closed,Low,"Reset link sent and verified",Account,Agent-FIN-03,12
+FIN-TCK-1004,FIN-CUST-004,2025-07-28,2025-07-29,"Incorrect interest calculation on FD",Closed,Medium,"Adjusted interest and credited difference",Deposits,Agent-FIN-15,10
+FIN-TCK-1005,FIN-CUST-005,2025-07-29,,"Suspected fraudulent transaction on debit card",Open,High,"Escalated to fraud team for investigation",Fraud,Agent-FIN-02,
+FIN-TCK-1006,FIN-CUST-006,2025-07-24,2025-07-25,"UPI limit exceeded error during payment",Closed,Low,"Educated customer on daily limits",Transactions,Agent-FIN-10,6
+FIN-TCK-1007,FIN-CUST-007,2025-07-23,2025-07-24,"Unable to download account statement",Closed,Low,"Emailed monthly statement",Account,Agent-FIN-06,4
+FIN-TCK-1008,FIN-CUST-008,2025-07-22,2025-07-23,"ATM cash withdrawal failed but balance debited",Closed,High,"Refunded within 24 hrs",Transactions,Agent-FIN-11,5
+FIN-TCK-1009,FIN-CUST-009,2025-07-21,2025-07-23,"Credit card reward points not updated",Closed,Medium,"Manually credited missing points",Cards,Agent-FIN-04,10
+FIN-TCK-1010,FIN-CUST-010,2025-07-20,2025-07-21,"KYC re-verification required",Closed,Low,"Completed video KYC",Account,Agent-FIN-09,8
+FIN-TCK-1011,FIN-CUST-011,2025-07-19,2025-07-20,"Duplicate debit card delivery",Closed,Medium,"Cancelled duplicate card and refunded fee",Cards,Agent-FIN-13,6
+FIN-TCK-1012,FIN-CUST-012,2025-07-18,2025-07-19,"Failed NEFT transfer",Closed,High,"Reversed NEFT charge",Transactions,Agent-FIN-05,7
+FIN-TCK-1013,FIN-CUST-013,2025-07-18,2025-07-19,"Incorrect balance displayed",Closed,Low,"Fixed display issue",Account,Agent-FIN-14,4
+FIN-TCK-1014,FIN-CUST-014,2025-07-18,2025-07-19,"Card declined during international payment",Closed,High,"Enabled international usage",Cards,Agent-FIN-02,9
+FIN-TCK-1015,FIN-CUST-015,2025-07-18,2025-07-19,"Unable to activate debit card PIN",Closed,Low,"Reset PIN through app",Cards,Agent-FIN-12,3
+FIN-TCK-1016,FIN-CUST-016,2025-07-17,2025-07-18,"Failed IMPS transfer at midnight",Closed,Medium,"Reprocessed transaction",Transactions,Agent-FIN-08,6
+FIN-TCK-1017,FIN-CUST-017,2025-07-16,2025-07-17,"Blocked net banking login",Closed,Low,"Unblocked after identity verification",Account,Agent-FIN-06,4
+FIN-TCK-1018,FIN-CUST-018,2025-07-15,2025-07-16,"Missing FD auto-renewal",Closed,Medium,"Renewed FD with backdated interest",Deposits,Agent-FIN-09,10
+FIN-TCK-1019,FIN-CUST-019,2025-07-15,2025-07-16,"UPI auto-pay mandate failed",Closed,Low,"Re-registered auto-pay",Transactions,Agent-FIN-11,5
+FIN-TCK-1020,FIN-CUST-020,2025-07-14,2025-07-15,"Fraud alert on suspicious login",Closed,High,"Reset password & blocked IP",Fraud,Agent-FIN-07,6
+FIN-TCK-1021,FIN-CUST-021,2025-07-14,2025-07-15,"Cheque deposit not credited",Closed,Medium,"Cleared after manual verification",Deposits,Agent-FIN-15,12
+FIN-TCK-1022,FIN-CUST-022,2025-07-13,2025-07-14,"Debit card delivery delayed",Closed,Low,"Resent new card via courier",Cards,Agent-FIN-04,9
+FIN-TCK-1023,FIN-CUST-023,2025-07-12,2025-07-13,"Duplicate EMI charged",Closed,High,"Reversed duplicate debit",Transactions,Agent-FIN-08,8
+FIN-TCK-1024,FIN-CUST-024,2025-07-11,2025-07-12,"Unable to change registered email",Closed,Low,"Updated email via KYC",Account,Agent-FIN-03,7
+FIN-TCK-1025,FIN-CUST-025,2025-07-10,2025-07-11,"Suspicious POS transaction",Closed,High,"Flagged as fraud and reversed",Fraud,Agent-FIN-02,5
+FIN-TCK-1026,FIN-CUST-026,2025-07-10,2025-07-11,"Incorrect loan repayment schedule",Closed,Medium,"Corrected EMI schedule",Account,Agent-FIN-12,9
+FIN-TCK-1027,FIN-CUST-027,2025-07-09,2025-07-10,"FD maturity payout delayed",Closed,Medium,"Processed payout instantly",Deposits,Agent-FIN-10,6
+FIN-TCK-1028,FIN-CUST-028,2025-07-08,2025-07-09,"Net banking OTP not received",Closed,Low,"Fixed SMS gateway issue",Account,Agent-FIN-05,4
+FIN-TCK-1029,FIN-CUST-029,2025-07-07,2025-07-08,"Double debit for single UPI payment",Closed,High,"Reversed duplicate debit",Transactions,Agent-FIN-07,6
+FIN-TCK-1030,FIN-CUST-030,2025-07-06,2025-07-07,"Credit card statement mismatch",Closed,Medium,"Rectified statement & reissued",Cards,Agent-FIN-13,8
+FIN-TCK-1031,FIN-CUST-031,2025-07-05,2025-07-06,"Unable to add new payee",Closed,Low,"Assisted payee registration",Transactions,Agent-FIN-11,4
+FIN-TCK-1032,FIN-CUST-032,2025-07-04,2025-07-05,"Dormant account reactivation request",Closed,Low,"Reactivated after KYC",Account,Agent-FIN-06,7
+FIN-TCK-1033,FIN-CUST-033,2025-07-03,2025-07-04,"Overseas ATM cash withdrawal failed",Closed,High,"Enabled international card usage",Cards,Agent-FIN-02,9
+FIN-TCK-1034,FIN-CUST-034,2025-07-03,2025-07-04,"Interest not credited on RD",Closed,Medium,"Manually credited missing interest",Deposits,Agent-FIN-14,6
+FIN-TCK-1035,FIN-CUST-035,2025-07-02,2025-07-03,"Debit card blocked without notice",Closed,High,"Unblocked after review",Cards,Agent-FIN-04,7
+FIN-TCK-1036,FIN-CUST-036,2025-07-01,2025-07-02,"Failed bill payment via net banking",Closed,Medium,"Reprocessed successfully",Transactions,Agent-FIN-08,8
+FIN-TCK-1037,FIN-CUST-037,2025-07-01,2025-07-02,"Card limit reduction without request",Closed,Medium,"Restored previous limit",Cards,Agent-FIN-12,6
+FIN-TCK-1038,FIN-CUST-038,2025-07-01,2025-07-02,"Account frozen due to KYC expiry",Closed,Low,"Updated KYC and unfroze",Account,Agent-FIN-09,10
+FIN-TCK-1039,FIN-CUST-039,2025-07-01,2025-07-02,"Payment gateway timeout error",Closed,Low,"Assisted retry, successful later",Transactions,Agent-FIN-11,3
+FIN-TCK-1040,FIN-CUST-040,2025-06-30,2025-07-01,"Fraudulent login attempt blocked",Closed,High,"Enabled two-factor authentication",Fraud,Agent-FIN-07,4
+FIN-TCK-1041,FIN-CUST-041,2025-06-30,2025-07-01,"Duplicate ACH debit request",Closed,High,"Reversed duplicate ACH debit",Transactions,Agent-FIN-08,6
+FIN-TCK-1042,FIN-CUST-042,2025-06-29,2025-06-30,"Mobile banking app login issue",Closed,Low,"Reinstalled app and cleared cache",Account,Agent-FIN-03,4
+FIN-TCK-1043,FIN-CUST-043,2025-06-29,2025-06-30,"Suspicious card transaction overseas",Closed,High,"Blocked card and issued replacement",Fraud,Agent-FIN-02,8
+FIN-TCK-1044,FIN-CUST-044,2025-06-28,2025-06-29,"Failed auto-debit for loan EMI",Closed,Medium,"Re-initiated auto-debit",Transactions,Agent-FIN-12,7
+FIN-TCK-1045,FIN-CUST-045,2025-06-28,2025-06-29,"Unrecognized merchant debit",Closed,High,"Investigated and reversed",Fraud,Agent-FIN-07,9
+FIN-TCK-1046,FIN-CUST-046,2025-06-27,2025-06-28,"Debit card PIN blocked",Closed,Medium,"Reset PIN securely",Cards,Agent-FIN-13,6
+FIN-TCK-1047,FIN-CUST-047,2025-06-27,2025-06-28,"NEFT transfer delayed",Closed,Low,"Credited within RBI timelines",Transactions,Agent-FIN-10,8
+FIN-TCK-1048,FIN-CUST-048,2025-06-26,2025-06-27,"Inactive debit card despite activation",Closed,Medium,"Reissued card",Cards,Agent-FIN-04,7
+FIN-TCK-1049,FIN-CUST-049,2025-06-26,2025-06-27,"Incorrect credit card interest charged",Closed,High,"Reversed interest fee",Cards,Agent-FIN-12,10
+FIN-TCK-1050,FIN-CUST-050,2025-06-25,2025-06-26,"Failed ECS debit for insurance premium",Closed,Medium,"Processed manually",Transactions,Agent-FIN-11,9
+FIN-TCK-1051,FIN-CUST-001,2025-06-25,2025-06-26,"Two-factor authentication SMS delayed",Closed,Low,"Fixed telecom routing issue",Account,Agent-FIN-06,4
+FIN-TCK-1052,FIN-CUST-002,2025-06-24,2025-06-25,"Blocked UPI ID recovery",Closed,Low,"Re-registered UPI ID",Transactions,Agent-FIN-10,5
+FIN-TCK-1053,FIN-CUST-003,2025-06-24,2025-06-25,"Dormant account query",Closed,Medium,"Reactivated after KYC",Account,Agent-FIN-09,8
+FIN-TCK-1054,FIN-CUST-004,2025-06-23,2025-06-24,"Incorrect loan EMI date",Closed,Low,"Adjusted repayment date",Account,Agent-FIN-05,6
+FIN-TCK-1055,FIN-CUST-005,2025-06-23,2025-06-24,"Fraudulent QR code scam",Closed,High,"Blocked account & refunded amount",Fraud,Agent-FIN-02,7
+FIN-TCK-1056,FIN-CUST-006,2025-06-22,2025-06-23,"Unable to request cheque book",Closed,Low,"Placed cheque book request",Account,Agent-FIN-14,4
+FIN-TCK-1057,FIN-CUST-007,2025-06-22,2025-06-23,"UPI app not linking bank account",Closed,Medium,"Re-linked successfully",Transactions,Agent-FIN-08,6
+FIN-TCK-1058,FIN-CUST-008,2025-06-21,2025-06-22,"FD receipt not generated",Closed,Low,"Mailed receipt PDF",Deposits,Agent-FIN-15,3
+FIN-TCK-1059,FIN-CUST-009,2025-06-21,2025-06-22,"Wrong cashback credited",Closed,Medium,"Adjusted cashback",Transactions,Agent-FIN-12,6
+FIN-TCK-1060,FIN-CUST-010,2025-06-20,2025-06-21,"Unauthorized auto-debit",Closed,High,"Cancelled mandate and refunded",Fraud,Agent-FIN-07,5
+FIN-TCK-1061,FIN-CUST-011,2025-06-20,2025-06-21,"Unable to generate account number proof",Closed,Low,"Generated and emailed letter",Account,Agent-FIN-04,4
+FIN-TCK-1062,FIN-CUST-012,2025-06-19,2025-06-20,"Credit card EMI option missing",Closed,Medium,"Enabled EMI option manually",Cards,Agent-FIN-13,7
+FIN-TCK-1063,FIN-CUST-013,2025-06-19,2025-06-20,"RD maturity payout delayed",Closed,Medium,"Credited to account",Deposits,Agent-FIN-15,8
+FIN-TCK-1064,FIN-CUST-014,2025-06-18,2025-06-19,"Account freeze due to high-risk alert",Closed,High,"Verified and unfroze account",Fraud,Agent-FIN-02,6
+FIN-TCK-1065,FIN-CUST-015,2025-06-18,2025-06-19,"Payment link expired prematurely",Closed,Low,"Reissued payment link",Transactions,Agent-FIN-10,4
+FIN-TCK-1066,FIN-CUST-016,2025-06-17,2025-06-18,"Debit card not working for contactless",Closed,Low,"Replaced with NFC-enabled card",Cards,Agent-FIN-12,5
+FIN-TCK-1067,FIN-CUST-017,2025-06-17,2025-06-18,"Pending failed ATM withdrawal reversal",Closed,High,"Credited refund",Transactions,Agent-FIN-07,6
+FIN-TCK-1068,FIN-CUST-018,2025-06-16,2025-06-17,"Standing instruction not processed",Closed,Medium,"Manually debited and fixed SI",Transactions,Agent-FIN-08,7
+FIN-TCK-1069,FIN-CUST-019,2025-06-16,2025-06-17,"Forgot UPI PIN",Closed,Low,"Reset PIN successfully",Transactions,Agent-FIN-11,4
+FIN-TCK-1070,FIN-CUST-020,2025-06-15,2025-06-16,"Account hacked alert",Closed,High,"Reset credentials & secured account",Fraud,Agent-FIN-02,8
+FIN-TCK-1071,FIN-CUST-021,2025-06-15,2025-06-16,"Cheque return charges dispute",Closed,Medium,"Waived charges",Deposits,Agent-FIN-14,7
+FIN-TCK-1072,FIN-CUST-022,2025-06-14,2025-06-15,"Debit card embossed name error",Closed,Low,"Reissued corrected card",Cards,Agent-FIN-04,5
+FIN-TCK-1073,FIN-CUST-023,2025-06-14,2025-06-15,"Failed loan prepayment",Closed,Medium,"Processed prepayment manually",Account,Agent-FIN-06,9
+FIN-TCK-1074,FIN-CUST-024,2025-06-13,2025-06-14,"Unrecognized SMS debit alerts",Closed,High,"Blocked fraudulent SMS alerts",Fraud,Agent-FIN-07,6
+FIN-TCK-1075,FIN-CUST-025,2025-06-13,2025-06-14,"NEFT beneficiary not showing",Closed,Low,"Refreshed beneficiary list",Transactions,Agent-FIN-09,3
+FIN-TCK-1076,FIN-CUST-026,2025-06-12,2025-06-13,"FD tax deduction error",Closed,Medium,"Corrected TDS entry",Deposits,Agent-FIN-15,8
+FIN-TCK-1077,FIN-CUST-027,2025-06-12,2025-06-13,"Credit card limit decreased suddenly",Closed,Medium,"Restored previous limit",Cards,Agent-FIN-13,6
+FIN-TCK-1078,FIN-CUST-028,2025-06-11,2025-06-12,"Dormant account penalty query",Closed,Low,"Waived charges after reactivation",Account,Agent-FIN-05,7
+FIN-TCK-1079,FIN-CUST-029,2025-06-11,2025-06-12,"Failed utility bill auto-pay",Closed,Medium,"Fixed mandate",Transactions,Agent-FIN-08,5
+FIN-TCK-1080,FIN-CUST-030,2025-06-10,2025-06-11,"Unrecognized POS debit abroad",Closed,High,"Reversed charge and blocked card",Fraud,Agent-FIN-02,8
+FIN-TCK-1081,FIN-CUST-031,2025-06-10,2025-06-11,"Account nominee update request",Closed,Low,"Updated nominee",Account,Agent-FIN-09,5
+FIN-TCK-1082,FIN-CUST-032,2025-06-09,2025-06-10,"Mobile OTP not received",Closed,Low,"Fixed SMS routing",Account,Agent-FIN-03,4
+FIN-TCK-1083,FIN-CUST-033,2025-06-09,2025-06-10,"Credit card cashback delay",Closed,Medium,"Manually credited cashback",Cards,Agent-FIN-12,6
+FIN-TCK-1084,FIN-CUST-034,2025-06-08,2025-06-09,"Failed UPI refund",Closed,High,"Credited refund manually",Transactions,Agent-FIN-10,5
+FIN-TCK-1085,FIN-CUST-035,2025-06-08,2025-06-09,"KYC verification rejected",Closed,Low,"Resubmitted and approved",Account,Agent-FIN-06,7
+FIN-TCK-1086,FIN-CUST-036,2025-06-07,2025-06-08,"Fraudulent loan application alert",Closed,High,"Blocked fraudulent loan request",Fraud,Agent-FIN-07,6
+FIN-TCK-1087,FIN-CUST-037,2025-06-07,2025-06-08,"ATM withdrawal charges dispute",Closed,Medium,"Reversed charges",Transactions,Agent-FIN-11,8
+FIN-TCK-1088,FIN-CUST-038,2025-06-06,2025-06-07,"Overdraft facility inquiry",Closed,Low,"Explained overdraft terms",Account,Agent-FIN-05,4
+FIN-TCK-1089,FIN-CUST-039,2025-06-06,2025-06-07,"Incorrect RD tenure set",Closed,Medium,"Corrected tenure",Deposits,Agent-FIN-15,7
+FIN-TCK-1090,FIN-CUST-040,2025-06-05,2025-06-06,"UPI auto-pay double debit",Closed,High,"Refunded duplicate debit",Transactions,Agent-FIN-08,5
+FIN-TCK-1091,FIN-CUST-041,2025-06-05,2025-06-06,"Blocked card without request",Closed,High,"Issued replacement card",Cards,Agent-FIN-04,8
+FIN-TCK-1092,FIN-CUST-042,2025-06-04,2025-06-05,"Loan foreclosure query",Closed,Low,"Shared foreclosure details",Account,Agent-FIN-06,6
+FIN-TCK-1093,FIN-CUST-043,2025-06-04,2025-06-05,"Fraud alert on IMPS transfer",Closed,High,"Blocked account temporarily",Fraud,Agent-FIN-02,7
+FIN-TCK-1094,FIN-CUST-044,2025-06-03,2025-06-04,"Debit card chip malfunction",Closed,Medium,"Issued replacement card",Cards,Agent-FIN-12,6
+FIN-TCK-1095,FIN-CUST-045,2025-06-03,2025-06-04,"Failed ATM transaction",Closed,High,"Credited refund within SLA",Transactions,Agent-FIN-07,5
+FIN-TCK-1096,FIN-CUST-046,2025-06-02,2025-06-03,"Internet banking locked",Closed,Low,"Unlocked after verification",Account,Agent-FIN-09,4
+FIN-TCK-1097,FIN-CUST-047,2025-06-02,2025-06-03,"Auto-debit triggered twice",Closed,High,"Reversed duplicate debit",Transactions,Agent-FIN-11,6
+FIN-TCK-1098,FIN-CUST-048,2025-06-01,2025-06-02,"Delayed FD creation confirmation",Closed,Low,"Mailed FD receipt",Deposits,Agent-FIN-15,3
+FIN-TCK-1099,FIN-CUST-049,2025-06-01,2025-06-02,"Account balance discrepancy",Closed,Medium,"Reconciled statement",Account,Agent-FIN-05,8
+FIN-TCK-1100,FIN-CUST-050,2025-06-01,, "Unauthorized e-commerce card transaction",Open,High,"Escalated to dispute resolution team",Fraud,Agent-FIN-02,
+

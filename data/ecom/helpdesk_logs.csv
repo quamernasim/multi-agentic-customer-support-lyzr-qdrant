@@ -1,0 +1,101 @@
+ticket_id,customer_id,opened_date,closed_date,issue_summary,status,priority,resolution_notes,category,assigned_agent,resolution_time_hours
+TCK-1001,CUST-001,2025-07-10,2025-07-11,"Unable to login to account",Closed,High,"Reset password and cleared cache",Technical,Agent-23,4.5
+TCK-1002,CUST-002,2025-07-05,2025-07-06,"Incorrect billing amount",Closed,Medium,"Refund issued and billing cycle corrected",Billing,Agent-11,8.2
+TCK-1003,CUST-003,2025-07-01,,"Subscription renewal failed",Open,Urgent,,"Billing",Agent-07,
+TCK-1004,CUST-004,2025-07-09,2025-07-09,"Two-factor authentication not working",Closed,High,"Re-synced device and verified settings",Technical,Agent-15,3.0
+TCK-1005,CUST-005,2025-06-28,2025-07-02,"Request to downgrade plan",Closed,Low,"Processed downgrade request",Account,Agent-09,12.5
+TCK-1006,CUST-006,2025-07-12,2025-07-14,"Item not delivered on time",Closed,High,"Contacted courier, expedited delivery",Delivery,Agent-18,15.0
+TCK-1007,CUST-007,2025-07-11,2025-07-12,"Received damaged product",Closed,High,"Processed replacement order",Returns,Agent-14,10.5
+TCK-1008,CUST-008,2025-07-08,2025-07-09,"Coupon code not working",Closed,Medium,"Issued manual discount",Billing,Agent-20,5.0
+TCK-1009,CUST-002,2025-07-13,,"Refund not yet processed",Open,High,,"Billing",Agent-11,
+TCK-1010,CUST-009,2025-07-10,2025-07-11,"Payment failed during checkout",Closed,High,"Resolved payment gateway issue",Billing,Agent-12,6.5
+TCK-1011,CUST-010,2025-07-09,2025-07-10,"App crashing during order placement",Closed,Urgent,"Reported bug to dev team, provided workaround",Technical,Agent-08,20.0
+TCK-1012,CUST-003,2025-07-14,,"Order stuck in processing",Pending,Medium,,"Orders",Agent-05,
+TCK-1013,CUST-001,2025-07-13,2025-07-14,"Price difference after purchase",Closed,Low,"Issued partial refund",Billing,Agent-09,7.0
+TCK-1014,CUST-011,2025-07-11,2025-07-12,"Account locked due to suspicious activity",Closed,High,"Verified identity and unlocked account",Account,Agent-23,6.0
+TCK-1015,CUST-012,2025-07-07,2025-07-08,"Return request approval delay",Closed,Medium,"Approved return request manually",Returns,Agent-16,9.5
+TCK-1016,CUST-013,2025-07-06,2025-07-06,"Delivery partner behavior complaint",Closed,Medium,"Escalated to logistics team",Delivery,Agent-19,4.0
+TCK-1017,CUST-014,2025-07-05,2025-07-07,"Unable to update address",Closed,High,"Fixed backend address update issue",Account,Agent-22,8.0
+TCK-1018,CUST-015,2025-07-08,2025-07-09,"Gift card not redeemable",Closed,Medium,"Issued new gift card",Billing,Agent-13,6.5
+TCK-1019,CUST-016,2025-07-07,,"Item missing from package",Open,High,,"Returns",Agent-14,
+TCK-1020,CUST-017,2025-07-10,2025-07-12,"Delivery delayed due to weather",Closed,Low,"Informed customer and rescheduled delivery",Delivery,Agent-18,14.0
+TCK-1021,CUST-018,2025-07-12,2025-07-13,"Product warranty claim",Closed,Medium,"Processed warranty replacement",Returns,Agent-17,10.0
+TCK-1022,CUST-019,2025-07-09,2025-07-09,"Invoice not received",Closed,Low,"Resent invoice email",Billing,Agent-20,2.5
+TCK-1023,CUST-002,2025-07-14,,"Overcharged for shipping",Pending,Medium,,"Billing",Agent-11,
+TCK-1024,CUST-020,2025-07-08,2025-07-09,"Subscription auto-renew error",Closed,High,"Corrected subscription settings",Account,Agent-09,7.5
+TCK-1025,CUST-021,2025-07-11,2025-07-11,"Received wrong item",Closed,High,"Arranged pickup and replacement",Returns,Agent-14,6.0
+TCK-1026,CUST-022,2025-07-05,2025-07-06,"App not showing latest offers",Closed,Low,"Cleared cache and refreshed offers",Technical,Agent-08,3.0
+TCK-1027,CUST-023,2025-07-10,2025-07-11,"Need GST invoice for business",Closed,Low,"Generated and emailed GST invoice",Billing,Agent-13,2.5
+TCK-1028,CUST-024,2025-07-09,2025-07-09,"Refund amount incorrect",Closed,Medium,"Corrected refund transaction",Billing,Agent-11,5.5
+TCK-1029,CUST-001,2025-07-07,2025-07-08,"Item stuck at customs",Closed,High,"Coordinated with courier to clear customs",Delivery,Agent-19,16.0
+TCK-1030,CUST-025,2025-07-12,2025-07-13,"Product out of stock after order placed",Closed,High,"Cancelled order and refunded amount",Orders,Agent-05,7.5
+TCK-1031,CUST-026,2025-07-11,2025-07-12,"Login OTP not received",Closed,Medium,"Verified phone and resent OTP",Technical,Agent-23,3.5
+TCK-1032,CUST-027,2025-07-13,,"Replacement delayed",Pending,High,,"Returns",Agent-16,
+TCK-1033,CUST-028,2025-07-09,2025-07-10,"Multiple charges for one order",Closed,Urgent,"Issued refund for duplicate charges",Billing,Agent-11,10.0
+TCK-1034,CUST-029,2025-07-07,2025-07-08,"Wishlist items disappeared",Closed,Low,"Restored wishlist items from backup",Technical,Agent-08,4.0
+TCK-1035,CUST-030,2025-07-08,2025-07-09,"Unable to apply exchange offer",Closed,Medium,"Applied exchange manually",Returns,Agent-14,6.5
+TCK-1036,CUST-031,2025-07-10,2025-07-11,"Refund taking too long",Closed,High,"Escalated to finance, refund processed",Billing,Agent-20,9.5
+TCK-1037,CUST-032,2025-07-12,2025-07-12,"Late delivery compensation",Closed,Low,"Issued store credit",Delivery,Agent-18,3.0
+TCK-1038,CUST-033,2025-07-11,2025-07-12,"Damaged packaging but product fine",Closed,Low,"Reported to courier, no action needed",Delivery,Agent-19,2.5
+TCK-1039,CUST-034,2025-07-09,2025-07-09,"Product authenticity concern",Closed,High,"Verified authenticity with manufacturer",Returns,Agent-17,8.0
+TCK-1040,CUST-035,2025-07-08,2025-07-08,"Item added to cart shows higher price",Closed,Medium,"Fixed pricing sync issue",Technical,Agent-08,5.0
+TCK-1041,CUST-036,2025-07-07,2025-07-07,"Need help with bulk order",Closed,Low,"Connected with sales team for support",Orders,Agent-05,3.0
+TCK-1042,CUST-037,2025-07-06,2025-07-07,"Exchange item not picked up",Closed,Medium,"Rescheduled pickup",Returns,Agent-16,6.5
+TCK-1043,CUST-038,2025-07-05,2025-07-05,"Payment deducted but order not placed",Closed,Urgent,"Manual order creation done",Billing,Agent-12,9.0
+TCK-1044,CUST-039,2025-07-10,2025-07-11,"Delivery attempted but failed",Closed,High,"Re-attempted delivery successfully",Delivery,Agent-18,5.0
+TCK-1045,CUST-040,2025-07-11,2025-07-12,"Refund credited to wrong account",Closed,High,"Corrected account details and reissued refund",Billing,Agent-20,8.5
+TCK-1046,CUST-041,2025-07-09,2025-07-09,"Requesting invoice split",Closed,Low,"Provided split invoices via email",Billing,Agent-13,3.5
+TCK-1047,CUST-042,2025-07-08,2025-07-09,"Email notifications not received",Closed,Medium,"Checked preferences, re-enabled notifications",Technical,Agent-08,4.5
+TCK-1048,CUST-043,2025-07-07,2025-07-08,"Product received different color",Closed,High,"Arranged correct item exchange",Returns,Agent-14,7.0
+TCK-1049,CUST-044,2025-07-06,2025-07-07,"Unable to track order",Closed,Medium,"Shared updated tracking link",Delivery,Agent-18,3.5
+TCK-1050,CUST-045,2025-07-12,2025-07-13,"Item returned but refund pending",Closed,High,"Confirmed receipt and processed refund",Returns,Agent-16,8.0
+TCK-1051,CUST-046,2025-07-10,2025-07-11,"Product arrived late and damaged",Closed,Urgent,"Issued refund and replacement",Returns,Agent-17,11.0
+TCK-1052,CUST-047,2025-07-09,2025-07-10,"Need invoice correction for tax filing",Closed,Medium,"Generated revised invoice",Billing,Agent-13,5.0
+TCK-1053,CUST-048,2025-07-12,2025-07-12,"Login issue with mobile app",Closed,High,"Cleared app data and re-linked account",Technical,Agent-08,4.5
+TCK-1054,CUST-049,2025-07-07,2025-07-08,"Incorrect item in combo pack",Closed,High,"Picked up incorrect item and shipped correct one",Returns,Agent-14,7.5
+TCK-1055,CUST-050,2025-07-06,2025-07-06,"Tracking number invalid",Closed,Medium,"Corrected tracking ID and updated customer",Delivery,Agent-18,3.0
+TCK-1056,CUST-002,2025-07-11,2025-07-12,"Refund processed less than amount paid",Closed,High,"Refunded remaining balance",Billing,Agent-11,6.5
+TCK-1057,CUST-010,2025-07-09,2025-07-10,"Order canceled automatically",Closed,Medium,"Restored canceled order manually",Orders,Agent-05,4.0
+TCK-1058,CUST-004,2025-07-08,2025-07-09,"Gift wrap not added",Closed,Low,"Added gift wrap before shipment",Orders,Agent-07,2.5
+TCK-1059,CUST-015,2025-07-12,2025-07-13,"App not loading order history",Closed,Medium,"Fixed backend sync issue",Technical,Agent-08,6.0
+TCK-1060,CUST-019,2025-07-10,2025-07-11,"Partial order received",Closed,High,"Dispatched missing items",Delivery,Agent-18,7.5
+TCK-1061,CUST-021,2025-07-08,2025-07-09,"Delivery attempted but at wrong address",Closed,High,"Updated address and re-dispatched",Delivery,Agent-19,8.0
+TCK-1062,CUST-030,2025-07-09,2025-07-09,"Delayed confirmation email after payment",Closed,Low,"Verified payment and sent confirmation",Billing,Agent-20,3.0
+TCK-1063,CUST-037,2025-07-07,2025-07-08,"Issue with EMI payment option",Closed,Medium,"Enabled EMI and guided checkout",Billing,Agent-12,5.5
+TCK-1064,CUST-006,2025-07-08,2025-07-08,"Need product customization details",Closed,Low,"Shared customization form",Orders,Agent-05,2.0
+TCK-1065,CUST-045,2025-07-06,2025-07-07,"Delayed exchange pickup",Closed,Medium,"Pickup rescheduled successfully",Returns,Agent-16,6.0
+TCK-1066,CUST-048,2025-07-12,2025-07-13,"Coupon applied but not reflected in bill",Closed,High,"Manually adjusted bill amount",Billing,Agent-11,7.0
+TCK-1067,CUST-041,2025-07-10,2025-07-11,"Subscription paused without notice",Closed,High,"Reactivated subscription",Account,Agent-23,5.0
+TCK-1068,CUST-028,2025-07-09,2025-07-09,"Multiple refund requests stuck",Closed,Urgent,"Escalated and cleared backlog refunds",Billing,Agent-20,10.5
+TCK-1069,CUST-034,2025-07-07,2025-07-08,"Account showing incorrect loyalty points",Closed,Medium,"Corrected points balance",Account,Agent-22,4.5
+TCK-1070,CUST-017,2025-07-08,2025-07-09,"Wrong invoice details",Closed,Low,"Updated invoice and emailed copy",Billing,Agent-13,2.0
+TCK-1071,CUST-025,2025-07-10,2025-07-11,"Item labeled as delivered but not received",Closed,Urgent,"Courier traced package and delivered next day",Delivery,Agent-19,12.0
+TCK-1072,CUST-003,2025-07-11,2025-07-12,"Product warranty rejection issue",Closed,High,"Accepted warranty and replaced item",Returns,Agent-17,8.0
+TCK-1073,CUST-009,2025-07-09,2025-07-09,"Unable to reset password",Closed,High,"Reset password via backend and verified login",Technical,Agent-23,3.5
+TCK-1074,CUST-022,2025-07-07,2025-07-08,"Late-night delivery request",Closed,Low,"Coordinated special delivery slot",Delivery,Agent-18,5.0
+TCK-1075,CUST-036,2025-07-06,2025-07-06,"Duplicate notifications received",Closed,Low,"Disabled redundant notification triggers",Technical,Agent-08,2.5
+TCK-1076,CUST-050,2025-07-08,2025-07-09,"Credit card charged twice",Closed,Urgent,"Reversed duplicate charge immediately",Billing,Agent-11,6.5
+TCK-1077,CUST-014,2025-07-09,2025-07-10,"Promo code not visible in app",Closed,Medium,"Cleared cache and updated offers",Technical,Agent-08,4.0
+TCK-1078,CUST-040,2025-07-11,2025-07-12,"Delivery delayed beyond SLA",Closed,High,"Issued partial refund and escalated to courier",Delivery,Agent-18,9.0
+TCK-1079,CUST-043,2025-07-08,2025-07-09,"Exchange window closed early",Closed,Medium,"Extended exchange period and processed request",Returns,Agent-14,6.5
+TCK-1080,CUST-016,2025-07-07,2025-07-07,"Wrong tracking info",Closed,Medium,"Updated courier tracking details",Delivery,Agent-19,3.0
+TCK-1081,CUST-032,2025-07-10,2025-07-11,"Delivery agent rude behavior",Closed,High,"Filed complaint with courier and apologized",Delivery,Agent-18,4.5
+TCK-1082,CUST-005,2025-07-09,2025-07-09,"Multiple discount codes not allowed",Closed,Low,"Explained policy and added goodwill credit",Billing,Agent-13,3.0
+TCK-1083,CUST-012,2025-07-11,2025-07-12,"Warranty claim status not updated",Closed,Medium,"Updated claim in system and notified",Returns,Agent-17,6.0
+TCK-1084,CUST-020,2025-07-08,2025-07-09,"Incorrect subscription renewal date",Closed,Low,"Corrected renewal date manually",Account,Agent-22,4.0
+TCK-1085,CUST-037,2025-07-07,2025-07-08,"Delivery PIN mismatch error",Closed,High,"Reset delivery PIN and validated",Delivery,Agent-18,5.5
+TCK-1086,CUST-011,2025-07-09,2025-07-09,"Issue with saved cards",Closed,Medium,"Re-linked cards in payment profile",Billing,Agent-12,4.0
+TCK-1087,CUST-027,2025-07-08,2025-07-08,"Delayed return pickup approval",Closed,Medium,"Manually approved pickup",Returns,Agent-16,5.0
+TCK-1088,CUST-018,2025-07-10,2025-07-11,"Shipment held at warehouse",Closed,High,"Cleared issue and released package",Delivery,Agent-19,7.0
+TCK-1089,CUST-046,2025-07-07,2025-07-08,"Incorrect price during sale event",Closed,Medium,"Applied sale price manually",Billing,Agent-11,4.5
+TCK-1090,CUST-013,2025-07-09,2025-07-09,"Payment method blocked",Closed,High,"Reactivated card and retried payment",Billing,Agent-12,5.5
+TCK-1091,CUST-033,2025-07-11,2025-07-12,"Need detailed delivery receipt",Closed,Low,"Emailed detailed receipt copy",Billing,Agent-13,3.0
+TCK-1092,CUST-026,2025-07-08,2025-07-08,"Missed delivery slot issue",Closed,Medium,"Rescheduled for next day slot",Delivery,Agent-18,4.0
+TCK-1093,CUST-029,2025-07-10,2025-07-11,"Item out of stock after payment",Closed,High,"Refund processed and restock notification set",Orders,Agent-05,6.5
+TCK-1094,CUST-042,2025-07-09,2025-07-09,"App language settings reset",Closed,Low,"Reapplied preferred language settings",Technical,Agent-08,2.5
+TCK-1095,CUST-049,2025-07-12,2025-07-13,"Unwanted subscription renewal",Closed,Medium,"Cancelled renewal and refunded amount",Account,Agent-22,5.0
+TCK-1096,CUST-035,2025-07-11,2025-07-12,"Delivery marked complete early",Closed,High,"Revisited courier for final delivery",Delivery,Agent-19,8.0
+TCK-1097,CUST-039,2025-07-07,2025-07-08,"Order address not editable",Closed,Medium,"Updated address manually",Orders,Agent-07,4.5
+TCK-1098,CUST-044,2025-07-09,2025-07-09,"Auto-applied coupon removed",Closed,Low,"Reapplied coupon manually",Billing,Agent-11,2.5
+TCK-1099,CUST-023,2025-07-10,2025-07-11,"Corporate order bulk discount missing",Closed,High,"Applied corporate discount and reissued bill",Billing,Agent-13,6.5
+TCK-1100,CUST-008,2025-07-08,2025-07-08,"Courier lost package",Closed,Urgent,"Processed refund and compensation voucher",Delivery,Agent-18,12.0

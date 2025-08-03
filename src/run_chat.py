@@ -1,16 +1,27 @@
-# run_support.py
-
-import json
-import re
 import uuid
-from agents import (
-    gemini_model, RouterAgent, SentimentAgent, KBAgent,
-    ResponseAgent, EscalationAgent, retrieve_kb,
-    get_history, save_message
-)
-from lyzr_automata import Task
 from lyzr_automata.pipelines.linear_sync_pipeline import LinearSyncPipeline
-from lyzr_automata.tasks.task_literals import InputType, OutputType
+
+from llm import load_gemini_model
+from utils import (
+     get_history, 
+     save_message,
+     text_2_json,
+     task_with_feedback_loop
+)
+from tasks import (
+     get_tenant_identification_task, 
+     get_customer_info_extraction_task,
+     get_ticket_extraction_task,
+     get_faq_extraction_task,
+     get_handbook_extraction_task,
+     get_policy_extraction_task,
+     get_routing_task,
+     get_sentiment_analysis_task,
+     get_escalation_task,
+     get_response_task
+)
+
+gemini_model = load_gemini_model(model_name="gemini-2.0-flash")
 
 def run_session():
     session_id = str(uuid.uuid4())
@@ -18,92 +29,90 @@ def run_session():
     
     while True:
         user_input = input("User: ")
+        # ask the user to provide with the user id for now
+        # but when this becomes a product, it can be directly taken from the request body
+        resolved_customer_id = 'CUST-010'
         if user_input.lower() == "exit":
             break
 
         save_message(session_id, "user", user_input)
         history = get_history(session_id)
+        tenant_task_response = get_tenant_identification_task(user_input).execute()
+        tenant_task_response = text_2_json(tenant_task_response)
+        resolved_tenant_id = tenant_task_response['response']['tenant_type']
+        # save_message(session_id, "TenantResolverAgent", tenant_task_response)
 
-        # 1. Route Issue
-        route_task = Task(
-            name="RouteIssue",
-            agent=RouterAgent,
-            model=gemini_model,
-            instructions=user_input,
-            input_type=InputType.TEXT,
-            output_type=OutputType.TEXT
+        customer_info_task_response = get_customer_info_extraction_task(user_input, resolved_tenant_id, resolved_customer_id).execute()
+        customer_info_task_response = text_2_json(customer_info_task_response)
+        final_customer_info = customer_info_task_response['response']['customer_info']
+        # save_message(session_id, "CustomerInfoRetrieverAgent", customer_info_task_response)
+
+        ticket_task_response = get_ticket_extraction_task(user_input, resolved_customer_id, resolved_tenant_id, top_k=3, k_prefetch=10).execute()
+        ticket_task_response = text_2_json(ticket_task_response)
+        relevant_ticket_info = ticket_task_response['response']['related_tickets']
+        # save_message(session_id, "TicketInfoRetrieverAgent", ticket_task_response)
+
+        # doesn't need to retrun anything if it doesn't find any related faq
+        # can have multiple faqs, if need be
+        # do not blindly rely on similary with query value, use your own brain
+        relevant_faqs, faq_task_response = task_with_feedback_loop(
+            user_input, get_faq_extraction_task, resolved_tenant_id, 'related_faqs', 
+            session_id, 'FAQsRetrieverAgent',"Couldn't find any FAQs related to the user query", top_k=3, k_prefetch=10
         )
-        # 2. Analyze Sentiment
-        senti_task = Task(
-            name="AnalyzeSentiment",
-            agent=SentimentAgent,
-            model=gemini_model,
-            instructions=user_input,
-            input_type=InputType.TEXT,
-            output_type=OutputType.TEXT
+
+        relevant_policy, policy_task_response = task_with_feedback_loop(
+            user_input, get_policy_extraction_task, resolved_tenant_id, 'related_policies', 
+            session_id, 'PolicyRetrieverAgent',"Couldn't find any policy related to the user query", top_k=3, k_prefetch=10
         )
-        # 3. Retrieve KB
-        kb_context = retrieve_kb(user_input)
-        kb_task = Task(
-            name="RetrieveKB",
-            agent=KBAgent,
-            model=gemini_model,
-            instructions=kb_context,
-            input_type=InputType.TEXT,
-            output_type=OutputType.TEXT
+
+        relevant_handbook, handbook_task_response = task_with_feedback_loop(
+            user_input, get_handbook_extraction_task, resolved_tenant_id, 'related_handbooks', 
+            session_id, 'HandbookRetrieverAgent',"Couldn't find any handbook related to the user query", top_k=3, k_prefetch=10
         )
-        # 4. Escalation Check
-        escalation_task = Task(
-            name="CheckEscalation",
-            agent=EscalationAgent,
-            model=gemini_model,
-            instructions=user_input,
-            input_type=InputType.TEXT,
-            output_type=OutputType.TEXT,
-            input_tasks = [
-                route_task, 
-                senti_task
-            ]
-        )
-        # 5. Generate Response
-        resp_instructions = (
-            f"You have been provided with the Issue, "
-            f"sentiment of the user, "
-            f"Knowledge Base context, "
-            f"History: {history}\n"
-            f"and Escalation status\n\n"
-            "Now craft the final support response based on all of the above."
-        )
-        response_task = Task(
-            name="GenerateResponse",
-            agent=ResponseAgent, model=gemini_model,
-            instructions=resp_instructions,
-            input_type=InputType.TEXT,
-            output_type=OutputType.TEXT,
-            input_tasks = [
-                route_task, 
-                senti_task, 
-                kb_task, 
-                escalation_task
-            ]
-        )
+        
+        full_context = f"""
+Customer Info
+-------------
+{final_customer_info}
+
+Related User's Issued Tickets
+------------------------------
+{relevant_ticket_info}
+
+Relavant FAQs for the User Query
+---------------------------------
+{relevant_faqs}
+
+Relavant Policies for the User Query
+---------------------------------
+{relevant_policy}
+
+Relavant Handbooks for the User Query
+---------------------------------
+{relevant_handbook}
+"""
+
+
+        routing_task = get_routing_task(user_input)
+        senti_task = get_sentiment_analysis_task(user_input)
+        escalation_task = get_escalation_task(user_input, routing_task, senti_task)
+        responding_task = get_response_task(full_context, history, routing_task, senti_task, escalation_task)
+
 
         pipeline = LinearSyncPipeline(
             name="MultiAgentSupport",
             completion_message="Done",
             tasks=[
-                route_task,
+                routing_task,
                 senti_task,
-                kb_task,
                 escalation_task,
-                response_task
+                responding_task
             ]
         )
         outputs = pipeline.run()
 
         response = outputs[-1]['task_output']
-        response = re.sub(r"^```json\n|\n```$", "", response.strip())
-        response = json.loads(response)
+        response = text_2_json(response)
         response = response['response']['message']
         print(f"Agent: {response}")
         save_message(session_id, "assistant", response)

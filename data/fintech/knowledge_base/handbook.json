@@ -1,0 +1,152 @@
+[
+  {
+    "kb_id": "FIN-KB-001",
+    "title": "How to Dispute a Failed Transaction",
+    "content": "If a transaction fails but funds are debited, first check your transaction history in the app. Wait at least 24 hours as many failures auto-refund. If no refund occurs, navigate to 'Dispute Transaction', enter the reference ID, and submit a screenshot of your statement. Our team will verify and credit your account within 3–5 working days.",
+    "tags": ["transactions","refunds"]
+  },
+  {
+    "kb_id": "FIN-KB-002",
+    "title": "Steps to Report Debit Card Fraud",
+    "content": "Log into your app and select 'Card Services' → 'Block Card'. Call the helpline to raise a dispute and submit an online fraud complaint form. Provide details like date, time, and merchant. Your card will be blocked immediately and investigation initiated. Resolution usually takes 7–10 working days.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "kb_id": "FIN-KB-003",
+    "title": "Updating KYC Details",
+    "content": "Go to 'Profile Settings' in the mobile app, click 'Update KYC', and upload identity proof (Aadhar, Passport) and address proof. For video KYC, schedule a live verification slot. Once verified, account restrictions will be lifted within 24 hours. Keeping KYC updated ensures uninterrupted services.",
+    "tags": ["privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-004",
+    "title": "Chargeback Process for Disputed Payments",
+    "content": "A chargeback protects you from unauthorized merchant charges. File it under 'Dispute Transaction' in the app with evidence (order confirmation, non-delivery email). The bank will liaise with card networks and merchants. Resolutions may take 30–45 days but interim credits may be issued.",
+    "tags": ["cards","refunds"]
+  },
+  {
+    "kb_id": "FIN-KB-005",
+    "title": "Enable International Card Usage",
+    "content": "For global transactions, toggle 'Enable International Usage' in card settings. Set a dedicated spending limit and verify via OTP. This is valid for 90 days and must be renewed periodically. Ensure currency conversion fees are reviewed before enabling usage.",
+    "tags": ["cards"]
+  },
+  {
+    "kb_id": "FIN-KB-006",
+    "title": "How Refunds Are Processed for Failed Payments",
+    "content": "Refunds for failed payments are automatically triggered by our system. For UPI or IMPS, expect 2–3 days; for card transactions, 5–7 days. Refund tracking is available in the app under 'Transactions'. If delays persist, contact support with the transaction ID.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "kb_id": "FIN-KB-007",
+    "title": "Preventing SIM Swap Fraud",
+    "content": "SIM swap fraud involves hijacking your phone number to intercept banking OTPs. Enable SIM lock, monitor sudden signal drops, and set UPI device binding. Report any suspicious activity to both your telecom operator and our fraud hotline immediately.",
+    "tags": ["fraud","privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-008",
+    "title": "Secure Card PIN Management",
+    "content": "Never share your PIN with anyone, including bank staff. Change your card PIN every 3–6 months using the app or ATM. Use biometric authentication wherever possible to avoid PIN entry at unsafe locations.",
+    "tags": ["cards","fraud"]
+  },
+  {
+    "kb_id": "FIN-KB-009",
+    "title": "How to Raise a Transaction Reversal Request",
+    "content": "Navigate to 'Transaction History', select the failed or duplicate entry, and click 'Raise Reversal Request'. Upload supporting screenshots and submit. Our system will process it within 2–5 days depending on the payment network.",
+    "tags": ["transactions","refunds"]
+  },
+  {
+    "kb_id": "FIN-KB-010",
+    "title": "Understanding Tokenized Card Payments",
+    "content": "Tokenization replaces your actual card number with a secure token for transactions. This ensures merchants never see your real card details, reducing fraud risk significantly. Enable tokenization in card settings before making online purchases.",
+    "tags": ["cards","privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-011",
+    "title": "Blocking Your Account During Fraud Attempts",
+    "content": "If you notice suspicious debits or phishing, use the 'Block Account' feature in the app. This immediately freezes all outgoing transfers while retaining incoming credits. Reactivate only after verifying identity with our support team.",
+    "tags": ["fraud"]
+  },
+  {
+    "kb_id": "FIN-KB-012",
+    "title": "Refund Escalation Process",
+    "content": "If a refund is not credited within SLA (5–7 days for cards, 2–3 for UPI), raise an escalation. Submit your original complaint ID, transaction details, and merchant invoice. Our escalation desk will prioritize resolution within 48 hours.",
+    "tags": ["refunds"]
+  },
+  {
+    "kb_id": "FIN-KB-013",
+    "title": "Temporary Card Blocking",
+    "content": "Cards can be temporarily blocked in-app if misplaced but later found. Navigate to 'Card Management' > 'Block Temporarily'. Unblock using OTP authentication once confirmed safe.",
+    "tags": ["cards"]
+  },
+  {
+    "kb_id": "FIN-KB-014",
+    "title": "How to Safely Share Account Statements",
+    "content": "Always download statements from secure banking portals. If sharing for verification, ensure encryption via password-protected PDFs. Never share statements over unsecured channels or messaging apps.",
+    "tags": ["privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-015",
+    "title": "Detecting Phishing and Fraudulent Links",
+    "content": "Fraudsters mimic bank emails or SMS to steal data. Always verify sender addresses, never click unknown links, and report phishing attempts via our official email. Activate email filters to auto-flag suspicious domains.",
+    "tags": ["fraud","privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-016",
+    "title": "How to Set UPI AutoPay Mandates",
+    "content": "UPI AutoPay allows recurring debits. Go to 'Mandates', approve merchant request via PIN, and set frequency. Cancel mandates anytime in-app. Ensure low-value mandates have limits to avoid misuse.",
+    "tags": ["transactions"]
+  },
+  {
+    "kb_id": "FIN-KB-017",
+    "title": "Steps to Freeze Your Debit Card",
+    "content": "In cases of suspected misuse, freeze your card instantly in-app. This prevents all debits until reactivated. You can unfreeze after OTP verification or request a permanent block if stolen.",
+    "tags": ["cards","fraud"]
+  },
+  {
+    "kb_id": "FIN-KB-018",
+    "title": "Safe Online Payment Practices",
+    "content": "Use cards only on trusted websites with HTTPS. Enable OTP authentication for all online transactions. Avoid saving card details on merchant portals to reduce exposure in case of breaches.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "kb_id": "FIN-KB-019",
+    "title": "Refund Timelines for Wallet Top-Ups",
+    "content": "Failed wallet top-ups refund within 24 hours automatically. If not reflected, verify your linked bank account details in the app before raising a complaint with transaction proof.",
+    "tags": ["refunds","transactions"]
+  },
+  {
+    "kb_id": "FIN-KB-020",
+    "title": "Setting Spending Limits for Security",
+    "content": "Restrict card or UPI spending to predefined limits in-app. This reduces risk in case of unauthorized use. Daily, per-transaction, and international caps are configurable anytime.",
+    "tags": ["privacy","cards"]
+  },
+  {
+    "kb_id": "FIN-KB-021",
+    "title": "Card Replacement After Fraudulent Charges",
+    "content": "If fraud is confirmed, request card reissuance in-app. A new card will be delivered in 3–5 days. The compromised card is permanently blocked to prevent reuse.",
+    "tags": ["fraud","cards"]
+  },
+  {
+    "kb_id": "FIN-KB-022",
+    "title": "Using Virtual Cards for Safer Payments",
+    "content": "Generate virtual cards in-app for e-commerce payments. These have dynamic card numbers and short validity, minimizing long-term exposure to online breaches.",
+    "tags": ["cards","privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-023",
+    "title": "Investigating Double Debits",
+    "content": "Duplicate debits may occur during network lags. Submit screenshots of both debits and receipts. The bank reverses extra charges within 3 business days post-verification.",
+    "tags": ["transactions","refunds"]
+  },
+  {
+    "kb_id": "FIN-KB-024",
+    "title": "Data Privacy During Account Mergers",
+    "content": "When merging multiple accounts, your personal data is securely encrypted and stored. KYC verification is required to authorize merging while maintaining privacy compliance.",
+    "tags": ["privacy"]
+  },
+  {
+    "kb_id": "FIN-KB-025",
+    "title": "Reporting ATM Skimming Fraud",
+    "content": "Skimming frauds involve hidden card readers at ATMs. Report immediately if unrecognized debits appear. Block the card and submit a fraud dispute form with ATM details.",
+    "tags": ["fraud","cards"]
+  }
+]
