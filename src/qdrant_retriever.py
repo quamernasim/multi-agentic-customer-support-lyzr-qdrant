@@ -169,15 +169,3 @@ def retrieve_related_knowledge_base(client: QdrantClient, query: str, tenant_id:
     sanitized_records = [{k: v for k, v in doc.items() if not k == 'id'} for doc in related_kb]
     context = json.dumps(sanitized_records, indent=2)
     return context
-
-
-
-
-
-
-
-
-
-
-
-

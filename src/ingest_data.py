@@ -124,4 +124,4 @@ def ingest_data(data_path, batch_size = 64):
 
 
 if __name__ == "__main__":
-    ingest_data(data_path = '../data')
+    ingest_data(data_path = 'data')
