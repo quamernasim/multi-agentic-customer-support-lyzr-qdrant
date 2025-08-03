@@ -3,14 +3,11 @@ from dotenv import load_dotenv
 from lyzr_automata.ai_models.model_base import AIModel
 import google.generativeai as genai
 
-# Load environment variables
 load_dotenv()
 
-# Load API key
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-# --- Define Custom Gemini Model Class ---
 class GeminiModel(AIModel):
     def __init__(self, api_key=None, parameters=None):
         self.api_key = api_key
@@ -31,10 +28,7 @@ class GeminiModel(AIModel):
             full_prompt = f"{system_persona}\n\n{prompt}"
         elif system_persona:
             full_prompt = system_persona
-        # print(f"Input prompt for task id {task_id}: {full_prompt}")
         outputs = self.model.generate_content(full_prompt).text
-        print(f"Generated text by task id {task_id}: {outputs}")
-        print('=' * 50)
         return outputs
 
     def generate_image(self, task_id=None, prompt=None, resource_box=None, tasks=None):
@@ -53,12 +47,10 @@ class GeminiModel(AIModel):
 
 
 def load_gemini_model(model_name="gemini-2.0-flash"):
-    # Define parameters for the Gemini model
     parameters = {
             "model": model_name,
         }
 
-    # --- Initialize Models and Clients ---
     gemini_model = GeminiModel(
         api_key=GEMINI_API_KEY,
         parameters=parameters

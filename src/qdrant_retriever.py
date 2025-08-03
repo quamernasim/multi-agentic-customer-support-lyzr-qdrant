@@ -27,7 +27,6 @@ def retrieve_context(
     Retrieve the top-K most semantically similar points matching the given filters.
     """
 
-    # 1. Embed the query string
     dense_vector = list(dense_embedding_model.embed([query_text]))[0]
     sparse_result = list(sparse_embedding_model.embed([query_text]))[0]
     sparse_vec = SparseVector(
@@ -35,7 +34,6 @@ def retrieve_context(
         values=sparse_result.values,
     )
 
-    # 2. Build payload filter conditions
     must_clauses = [
         FieldCondition(key="tenant_id", match=MatchValue(value=tenant_id))
     ]
@@ -48,17 +46,15 @@ def retrieve_context(
             FieldCondition(key="customer_id", match=MatchValue(value=customer_id))
         )
     if tags:
-        # Match any of the supplied tags
         must_clauses.append(
             FieldCondition(
                 key="tags",
-                match=MatchAny(any=tags)  # Qdrant supports list match for keyword
+                match=MatchAny(any=tags) 
             )
         )
 
     payload_filter = Filter(must=must_clauses)
 
-    # 3. Define prefetch queries
     prefetches = [
         Prefetch(
             query=sparse_vec,
@@ -72,7 +68,6 @@ def retrieve_context(
         ),
     ]
 
-    # 4. Build the fusion query
     fusion_query = FusionQuery(fusion=fusion_method)
 
     results = client.query_points(
@@ -85,7 +80,6 @@ def retrieve_context(
        
     )
 
-    # 4. Return id, score and payload for each hit
     return [
         {
             "id": hit.id,

@@ -20,7 +20,7 @@ def process_unstructured_files(directory_path, tenant_id, points_list):
     for filename in os.listdir(directory_path):
         if filename.endswith(".json"):
             filepath = os.path.join(directory_path, filename)
-            source_name = filename.split('.')[0]  # e.g., 'faqs', 'policy'
+            source_name = filename.split('.')[0]
             
             with open(filepath, 'r') as f:
                 data = json.load(f)
@@ -109,16 +109,11 @@ def ingest_data(data_path, batch_size = 64):
         kb_path = f"{data_path}/{tenant}/knowledge_base"
         process_unstructured_files(kb_path, tenant, kb_points)
 
-    # --- Upload to Qdrant ---
-    # User Data
     user_data_texts, user_data_payloads = zip(*user_data_points)
-    # user_data_embeddings = list(DENSE_EMBEDDING_MODEL.embed(user_data_texts))[0]
     upsert_in_batch(user_data_texts, user_data_payloads, "user_data", batch_size)
     print(f"\nIngested {len(user_data_points)} points into 'user_data' collection.")
 
-    # Knowledge Base
     kb_texts, kb_payloads = zip(*kb_points)
-    # kb_embeddings = list(embedding_model.embed(kb_texts))
     upsert_in_batch(kb_texts, kb_payloads, "knowledge_base", batch_size)
     print(f"Ingested {len(kb_points)} points into 'knowledge_base' collection.")
 
