@@ -18,8 +18,15 @@ from tasks import (
      get_routing_task,
      get_sentiment_analysis_task,
      get_escalation_task,
-     get_response_task
+     get_response_task,
+     get_image_path_extraction_task,
+     get_order_id_extraction_task,
+     get_return_product_validation_task,
+     get_product_quality_check_task,
+     get_order_info_task
 )
+
+
 from caching import SemanticCache
 
 gemini_model = load_gemini_model(model_name="gemini-2.0-flash")
@@ -76,6 +83,32 @@ def run_session():
                 user_input, get_handbook_extraction_task, resolved_tenant_id, 'related_handbooks', 
                 session_id, 'HandbookRetrieverAgent',"Couldn't find any handbook related to the user query", top_k=3, k_prefetch=10
             )
+
+            image_path_task_response = get_image_path_extraction_task(user_input).execute()
+            image_path_task_response = text_2_json(image_path_task_response)
+            image_path = image_path_task_response['response']['image_path']
+
+            order_id_extraction_task = get_order_id_extraction_task(user_input).execute()
+            order_id_extraction_task = text_2_json(order_id_extraction_task)
+            order_id = order_id_extraction_task['response']['order_id']
+
+            order_info_task = get_order_info_task(resolved_tenant_id, resolved_customer_id, order_id).execute()
+            order_info_task = text_2_json(order_info_task)
+            order_info = order_info_task['response']['order_info']
+
+
+            if image_path:
+                return_product_validation_task_response = get_return_product_validation_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
+                return_product_validation_task_response = text_2_json(return_product_validation_task_response)
+                retrun_validation_check = return_product_validation_task_response['response']
+
+                product_quality_check_task_response = get_product_quality_check_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
+                product_quality_check_task_response = text_2_json(product_quality_check_task_response)
+                product_quality_check = product_quality_check_task_response['response']
+            else:
+                retrun_validation_check = "Can't say as the user has not provided the image of the product"
+                product_quality_check = "Can't say as the user has not provided the image of the product"
+
             
             full_context = f"""
 Customer Info
@@ -97,6 +130,19 @@ Relavant Policies for the User Query
 Relavant Handbooks for the User Query
 ---------------------------------
 {relevant_handbook}
+
+Order Info
+----------
+{order_info}
+
+Product Quality Check Info For Returing The Defect Free Product
+----------------------------------------------------------------
+{product_quality_check}
+
+Product Return Validation Check
+------------------------------- 
+{retrun_validation_check}
+
 """
             routing_task = get_routing_task(user_input)
             senti_task = get_sentiment_analysis_task(user_input)

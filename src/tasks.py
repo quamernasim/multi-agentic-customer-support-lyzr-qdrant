@@ -13,12 +13,19 @@ from agents import (
     RouterAgent,
     SentimentAgent, 
     EscalationAgent, 
-    ResponseAgent
+    ResponseAgent,
+    ReturnValidationAgent,
+    ProductQualityCheckAgent,
+    OrderIDExtractorAgent,
+    ImagePathExtractorAgent,
+    OrderInfoExtractorAgent
 )
 from qdrant_retriever import (
     retrieve_customer_info, 
     retrieve_customer_helpdesk_logs, 
-    retrieve_related_knowledge_base
+    retrieve_related_knowledge_base,
+    retrieve_order_info,
+    retrieve_image_info
 )
 
 
@@ -29,6 +36,116 @@ qdrant = QdrantClient(host="localhost", port=6333)
 # resolved_faq_tags = ['payments']
 # resolved_policy_tags = ['payments']
 # resolved_handbook_tags = ['payments']
+
+def get_image_path_extraction_task(user_input):
+    task = Task(
+        name="ImagePathExtraction",
+        agent=ImagePathExtractorAgent,
+        model=gemini_model,
+        instructions=user_input,
+        input_type=InputType.TEXT,
+        output_type=OutputType.TEXT
+    )
+    return task
+
+def get_order_id_extraction_task(user_input):
+    task = Task(
+        name="OrderIDExtraction",
+        agent=OrderIDExtractorAgent,
+        model=gemini_model,
+        instructions=user_input,
+        input_type=InputType.TEXT,
+        output_type=OutputType.TEXT
+    )
+    return task
+
+def get_return_product_validation_task(tenant_id, customer_id, order_id, image_path):
+
+    order_info = retrieve_order_info(
+        client = qdrant,
+        tenant_id = tenant_id,
+        customer_id = customer_id,
+        order_id = order_id
+    )
+    retrived_image_info = retrieve_image_info(
+        client = qdrant,
+        image_path=image_path,
+        tenant_id = tenant_id,
+        customer_id = customer_id,
+        top_k=1,
+        k_prefetch=10
+    )
+    context = f"""
+Original Product Info
+----------------------
+{order_info}
+
+Retrived Image Info
+--------------------
+{retrived_image_info}
+"""
+    task = Task(
+        name="ReturnValidation",
+        agent=ReturnValidationAgent,
+        model=gemini_model,
+        instructions=context,
+        input_type=InputType.TEXT,
+        output_type=OutputType.TEXT
+    )
+    return task
+
+
+def get_order_info_task(tenant_id, customer_id, order_id):
+    order_info = retrieve_order_info(
+        client = qdrant,
+        tenant_id = tenant_id,
+        customer_id = customer_id,
+        order_id = order_id
+    )
+    task = Task(
+        name="OrderInfoExtraction",
+        agent=OrderInfoExtractorAgent,
+        model=gemini_model,
+        instructions=order_info,
+        input_type=InputType.TEXT,
+        output_type=OutputType.TEXT
+    )
+    return task
+
+def get_product_quality_check_task(tenant_id, customer_id, order_id, image_path):
+    order_info = retrieve_order_info(
+        client = qdrant,
+        tenant_id = tenant_id,
+        customer_id = customer_id,
+        order_id = order_id
+    )
+    retrived_image_info = retrieve_image_info(
+        client = qdrant,
+        image_path=image_path,
+        tenant_id = tenant_id,
+        customer_id = customer_id,
+        top_k=1,
+        k_prefetch=10
+    )
+    context = f"""
+Original Product Info
+----------------------
+{order_info}
+
+Retrived Image Info
+--------------------
+{retrived_image_info}
+"""
+    task = Task(
+        name="ProductQualityChecker",
+        agent=ProductQualityCheckAgent,
+        model=gemini_model,
+        instructions=context,
+        input_type=InputType.TEXT,
+        output_type=OutputType.TEXT
+    )
+    return task
+    
 
 def get_tenant_identification_task(user_input):
     task = Task(

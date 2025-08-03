@@ -1,6 +1,6 @@
 import json
 from qdrant_client import QdrantClient, models
-from fastembed import TextEmbedding
+from fastembed import TextEmbedding, ImageEmbedding
 from fastembed import SparseTextEmbedding
 from qdrant_client.models import (
     Filter, FieldCondition, MatchValue, MatchAny,
@@ -10,12 +10,14 @@ from qdrant_client.models import (
 
 dense_embedding_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")
 sparse_embedding_model = SparseTextEmbedding(model_name="prithivida/Splade_PP_en_v1")
+image_embedding_model = ImageEmbedding(model_name="Qdrant/clip-ViT-B-32-vision")
 
 def retrieve_context(
     client: QdrantClient,
     collection_name: str,
     query_text: str,
     tenant_id: str,
+    image_path: str = None,
     source_type: str = None,
     tags: list[str] = None,
     customer_id: str = None,
@@ -27,46 +29,47 @@ def retrieve_context(
     Retrieve the top-K most semantically similar points matching the given filters.
     """
 
-    dense_vector = list(dense_embedding_model.embed([query_text]))[0]
-    sparse_result = list(sparse_embedding_model.embed([query_text]))[0]
-    sparse_vec = SparseVector(
-        indices=sparse_result.indices,
-        values=sparse_result.values,
-    )
+    dense_vector = None
+    sparse_vec = None
+    prefetches = []
 
-    must_clauses = [
-        FieldCondition(key="tenant_id", match=MatchValue(value=tenant_id))
-    ]
-    if source_type:
-        must_clauses.append(
-            FieldCondition(key="source_type", match=MatchValue(value=source_type))
+    if query_text:
+        dense_vector = list(dense_embedding_model.embed([query_text]))[0]
+        sparse_result = list(sparse_embedding_model.embed([query_text]))[0]
+        sparse_vec = SparseVector(
+            indices=sparse_result.indices,
+            values=sparse_result.values,
         )
-    if customer_id:
-        must_clauses.append(
-            FieldCondition(key="customer_id", match=MatchValue(value=customer_id))
+
+        prefetches.append(
+            Prefetch(query=sparse_vec, using="sparse", limit=k_prefetch)
         )
-    if tags:
-        must_clauses.append(
-            FieldCondition(
-                key="tags",
-                match=MatchAny(any=tags) 
+        prefetches.append(
+            Prefetch(
+                query=dense_vector.tolist() if hasattr(dense_vector, "tolist") else dense_vector,
+                using="dense",
+                limit=k_prefetch,
             )
         )
 
-    payload_filter = Filter(must=must_clauses)
+    if image_path and collection_name == "orders":
+        from fastembed import ImageEmbedding
+        image_vec = list(image_embedding_model.embed([image_path]))[0]
+        prefetches.append(
+            Prefetch(query=image_vec, using="image", limit=k_prefetch)
+        )
 
-    prefetches = [
-        Prefetch(
-            query=sparse_vec,
-            using="sparse",
-            limit=k_prefetch,
-        ),
-        Prefetch(
-            query=dense_vector.tolist() if isinstance(dense_vector, (list, tuple)) else dense_vector,
-            using="dense",
-            limit=k_prefetch,
-        ),
-    ]
+    must_clauses = []
+    if tenant_id:
+        must_clauses.append(FieldCondition(key="tenant_id", match=MatchValue(value=tenant_id)))
+    if source_type:
+        must_clauses.append(FieldCondition(key="source_type", match=MatchValue(value=source_type)))
+    if customer_id:
+        must_clauses.append(FieldCondition(key="customer_id", match=MatchValue(value=customer_id)))
+    if tags:
+        must_clauses.append(FieldCondition(key="tags", match=MatchAny(any=tags)))
+
+    payload_filter = Filter(must=must_clauses)
 
     fusion_query = FusionQuery(fusion=fusion_method)
 
@@ -77,7 +80,6 @@ def retrieve_context(
         query_filter=payload_filter,
         limit=top_k,
         with_payload=True
-       
     )
 
     return [
@@ -163,3 +165,57 @@ def retrieve_related_knowledge_base(client: QdrantClient, query: str, tenant_id:
     sanitized_records = [{k: v for k, v in doc.items() if not k == 'id'} for doc in related_kb]
     context = json.dumps(sanitized_records, indent=2)
     return context
+
+def retrieve_order_info(
+    client: QdrantClient,
+    tenant_id: str,
+    customer_id: str,
+    order_id: str,
+):
+    must_clauses = [
+        FieldCondition(key="tenant_id", match=MatchValue(value=tenant_id))
+    ]
+    must_clauses.append(
+        FieldCondition(key="order_id", match=MatchValue(value=order_id))
+    )
+    must_clauses.append(
+        FieldCondition(key="customer_id", match=MatchValue(value=customer_id))
+    )
+
+    payload_filter = Filter(must=must_clauses)
+
+    results, _ = client.scroll(
+        collection_name="orders",
+        scroll_filter=payload_filter,
+        limit=1,
+    )
+
+    if not results:
+        return f"No order information found for this tenant_id: {tenant_id}, customer_id: {customer_id}, and order_id: {order_id}"
+    
+    return results[0].payload
+
+
+def retrieve_image_info(
+    client: QdrantClient,
+    query_text: str,
+    image_path: str,
+    tenant_id: str,
+    customer_id: str,
+    top_k: int = 3,
+    k_prefetch: int = 10,
+):
+    """
+    Retrieve similar orders by multimodal query (text + image).
+    """
+    return retrieve_context(
+        client=client,
+        collection_name="orders",
+        query_text=query_text,
+        image_path=image_path,
+        tenant_id=tenant_id,
+        customer_id=customer_id,
+        top_k=top_k,
+        k_prefetch=k_prefetch,
+        fusion_method=Fusion.RRF
+    )

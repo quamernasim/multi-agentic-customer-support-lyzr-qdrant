@@ -1,14 +1,14 @@
 from qdrant_client import QdrantClient, models
 
-DENSE_EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 DENSE_EMBEDDING_SIZE = 384
-SPARSE_EMBEDDING_MODEL_NAME = "prithivida/Splade_PP_en_v1"
+IMAGE_EMBEDDING_SIZE = 512
 client = QdrantClient(host="localhost", port=6333)
 
 def create_or_recreate_collection(
     name: str, 
     indexes: dict, 
     use_sparse: bool = True, 
+    use_image: bool = False,
     use_hnsw_optimization: bool = False,
     distance_metric: models.Distance = models.Distance.COSINE
 ):
@@ -41,15 +41,23 @@ def create_or_recreate_collection(
             )
         }
 
+    vectors_config={
+        "dense": models.VectorParams(
+            size=DENSE_EMBEDDING_SIZE,
+            distance=distance_metric,
+            on_disk=True,
+        ),
+    }
+    if use_image:
+        vectors_config['image'] = models.VectorParams(
+            size=IMAGE_EMBEDDING_SIZE,
+            distance=distance_metric,
+            on_disk=True,   
+        )
+
     client.create_collection(
         collection_name=name,
-        vectors_config={
-            "dense": models.VectorParams(
-                size=DENSE_EMBEDDING_SIZE,
-                distance=distance_metric,
-                on_disk=True,
-            ),
-        },
+        vectors_config=vectors_config,
         sparse_vectors_config=sparse_vectors_config,
         hnsw_config=hnsw_config,
         on_disk_payload=True,
@@ -75,7 +83,6 @@ if __name__ == "__main__":
 
     create_or_recreate_collection("user_data", indexes=user_data_indexes, use_hnsw_optimization=True)
     create_or_recreate_collection("knowledge_base", indexes=kb_indexes, use_hnsw_optimization=True)
-    print("Qdrant setup complete.")
 
 
     cache_indexes = {
@@ -83,3 +90,11 @@ if __name__ == "__main__":
         "customer_id": models.KeywordIndexParams(type='keyword', is_tenant=True, on_disk=True)
     }
     create_or_recreate_collection("semantic_cache", indexes=cache_indexes, use_sparse=False, distance_metric=models.Distance.EUCLID)
+
+    order_indexes = {
+        "tenant_id": models.KeywordIndexParams(type='keyword', is_tenant=True, on_disk=True),
+        "customer_id": models.KeywordIndexParams(type='keyword', is_tenant=True, on_disk=True),
+        "order_id": models.KeywordIndexParams(type='keyword', is_tenant=True, on_disk=True)
+    }
+    create_or_recreate_collection("orders", indexes=order_indexes, use_image=True)
+    print("Qdrant setup complete.")
