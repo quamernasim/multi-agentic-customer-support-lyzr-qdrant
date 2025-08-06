@@ -92,22 +92,37 @@ def run_session():
             order_id_extraction_task = text_2_json(order_id_extraction_task)
             order_id = order_id_extraction_task['response']['order_id']
 
-            order_info_task = get_order_info_task(resolved_tenant_id, resolved_customer_id, order_id).execute()
-            order_info_task = text_2_json(order_info_task)
-            order_info = order_info_task['response']['order_info']
-
-
-            if image_path:
-                return_product_validation_task_response = get_return_product_validation_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
-                return_product_validation_task_response = text_2_json(return_product_validation_task_response)
-                retrun_validation_check = return_product_validation_task_response['response']
-
-                product_quality_check_task_response = get_product_quality_check_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
-                product_quality_check_task_response = text_2_json(product_quality_check_task_response)
-                product_quality_check = product_quality_check_task_response['response']
+            # Only process order info if order_id is not None and not empty
+            if order_id and order_id.strip():
+                try:
+                    order_info_task = get_order_info_task(resolved_tenant_id, resolved_customer_id, order_id).execute()
+                    order_info_task = text_2_json(order_info_task)
+                    order_info = order_info_task['response']['order_info']
+                except Exception as e:
+                    order_info = f"Could not retrieve order information for order ID: {order_id}. Error: {str(e)}"
             else:
-                retrun_validation_check = "Can't say as the user has not provided the image of the product"
-                product_quality_check = "Can't say as the user has not provided the image of the product"
+                order_info = "No order ID found in the user query."
+
+
+            if image_path and order_id and order_id.strip():
+                try:
+                    return_product_validation_task_response = get_return_product_validation_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
+                    return_product_validation_task_response = text_2_json(return_product_validation_task_response)
+                    retrun_validation_check = return_product_validation_task_response['response']
+
+                    product_quality_check_task_response = get_product_quality_check_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
+                    product_quality_check_task_response = text_2_json(product_quality_check_task_response)
+                    product_quality_check = product_quality_check_task_response['response']
+                except Exception as e:
+                    retrun_validation_check = f"Could not validate return for order {order_id}. Error: {str(e)}"
+                    product_quality_check = f"Could not check product quality for order {order_id}. Error: {str(e)}"
+            else:
+                if not image_path:
+                    retrun_validation_check = "Can't say as the user has not provided the image of the product"
+                    product_quality_check = "Can't say as the user has not provided the image of the product"
+                else:
+                    retrun_validation_check = "Can't process as no valid order ID was found"
+                    product_quality_check = "Can't process as no valid order ID was found"
 
             
             full_context = f"""
