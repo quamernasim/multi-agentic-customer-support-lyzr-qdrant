@@ -3,7 +3,7 @@ from lyzr_automata import Task
 from lyzr_automata.tasks.task_literals import InputType, OutputType
 
 from llm import load_gemini_model
-from agents import (
+from agents_util.agents import (
     TenantResolverAgent, 
     CustomerInfoExtractorAgent,
     TicketExtractorAgent,
@@ -20,7 +20,7 @@ from agents import (
     ImagePathExtractorAgent,
     OrderInfoExtractorAgent
 )
-from qdrant_retriever import (
+from qdrant_util.qdrant_retriever import (
     retrieve_customer_info, 
     retrieve_customer_helpdesk_logs, 
     retrieve_related_knowledge_base,

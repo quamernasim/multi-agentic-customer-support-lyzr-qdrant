@@ -8,7 +8,7 @@ from utils import (
      text_2_json,
      task_with_feedback_loop
 )
-from tasks import (
+from agents_util.tasks import (
      get_tenant_identification_task, 
      get_customer_info_extraction_task,
      get_ticket_extraction_task,
@@ -25,9 +25,7 @@ from tasks import (
      get_product_quality_check_task,
      get_order_info_task
 )
-
-
-from caching import SemanticCache
+from qdrant_util.caching import SemanticCache
 
 gemini_model = load_gemini_model(model_name="gemini-2.0-flash")
 cache = SemanticCache(threshold=0.2)
