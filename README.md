@@ -88,18 +88,18 @@ Create a `.env` file at the project root:
 
 1. Launch Qdrant in Docker:
 
-   ```bash
-   docker run --gpus=all -p 6333:6333 -p 6334:6334 -e QDRANT__GPU__INDEXING=1 -v $(pwd)/qdrant_storage:/qdrant/storage:z qdrant/qdrant:gpu-nvidia-latest
-   ```
+```bash
+docker run --gpus=all -p 6333:6333 -p 6334:6334 -e QDRANT__GPU__INDEXING=1 -v $(pwd)/qdrant_storage:/qdrant/storage:z qdrant/qdrant:gpu-nvidia-latest
+```
 
 2. Initialize collections:
 
-   ```bash
-   python src/qdrant_util/setup_qdrant.py
-   ```
+```bash
+uv run src/qdrant_util/setup_qdrant.py
+```
 
-   - Creates hybrid/vector collections
-   - Configures dense, sparse, and optional image indices
+- Creates hybrid/vector collections
+- Configures dense, sparse, and optional image indices
 
 ---
 
@@ -108,7 +108,7 @@ Create a `.env` file at the project root:
 Populate Qdrant with your knowledge base, CRM data, FAQs, orders, etc.:
 
 ```bash
-python src/qdrant_util/ingest_data.py
+uv run src/qdrant_util/ingest_data.py
 ```
 
 - handles batched embedding & upsert using `fastembed` and `qdrant-client`.
@@ -120,7 +120,7 @@ python src/qdrant_util/ingest_data.py
 Start an interactive session with multiagent support:
 
 ```bash
-python run_chat.py
+uv run src/run_chat.py
 ```
 
 **Workflow per query:**
