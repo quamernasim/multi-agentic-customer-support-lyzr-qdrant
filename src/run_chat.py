@@ -27,8 +27,16 @@ from agents_util.tasks import (
 )
 from qdrant_util.caching import SemanticCache
 
-gemini_model = load_gemini_model(model_name="gemini-2.0-flash")
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
+
+gemini_model = load_gemini_model(model_name=GEMINI_MODEL_NAME)
 cache = SemanticCache(threshold=0.2)
+
+debug = False
 
 def run_session():
     session_id = str(uuid.uuid4())
@@ -61,23 +69,23 @@ def run_session():
 
             ticket_task_response = get_ticket_extraction_task(user_input, resolved_customer_id, resolved_tenant_id, top_k=3, k_prefetch=10).execute()
             ticket_task_response = text_2_json(ticket_task_response)
-            relevant_ticket_info = ticket_task_response['response']['related_tickets']
+            relavant_ticket_info = ticket_task_response['response']['related_tickets']
             # save_message(session_id, "TicketInfoRetrieverAgent", ticket_task_response)
 
-            # doesn't need to retrun anything if it doesn't find any related faq
+            # doesn't need to return anything if it doesn't find any related faq
             # can have multiple faqs, if need be
-            # do not blindly rely on similary with query value, use your own brain
-            relevant_faqs, faq_task_response = task_with_feedback_loop(
+            # do not blindly rely on similarity with query value, use your own brain
+            relavant_faqs, faq_task_response = task_with_feedback_loop(
                 user_input, get_faq_extraction_task, resolved_tenant_id, 'related_faqs', 
                 session_id, 'FAQsRetrieverAgent',"Couldn't find any FAQs related to the user query", top_k=3, k_prefetch=10
             )
 
-            relevant_policy, policy_task_response = task_with_feedback_loop(
+            relavant_policy, policy_task_response = task_with_feedback_loop(
                 user_input, get_policy_extraction_task, resolved_tenant_id, 'related_policies', 
                 session_id, 'PolicyRetrieverAgent',"Couldn't find any policy related to the user query", top_k=3, k_prefetch=10
             )
 
-            relevant_handbook, handbook_task_response = task_with_feedback_loop(
+            relavant_handbook, handbook_task_response = task_with_feedback_loop(
                 user_input, get_handbook_extraction_task, resolved_tenant_id, 'related_handbooks', 
                 session_id, 'HandbookRetrieverAgent',"Couldn't find any handbook related to the user query", top_k=3, k_prefetch=10
             )
@@ -106,23 +114,22 @@ def run_session():
                 try:
                     return_product_validation_task_response = get_return_product_validation_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
                     return_product_validation_task_response = text_2_json(return_product_validation_task_response)
-                    retrun_validation_check = return_product_validation_task_response['response']
+                    return_validation_check = return_product_validation_task_response['response']
 
                     product_quality_check_task_response = get_product_quality_check_task(resolved_tenant_id, resolved_customer_id, order_id, image_path).execute()
                     product_quality_check_task_response = text_2_json(product_quality_check_task_response)
                     product_quality_check = product_quality_check_task_response['response']
                 except Exception as e:
-                    retrun_validation_check = f"Could not validate return for order {order_id}. Error: {str(e)}"
+                    return_validation_check = f"Could not validate return for order {order_id}. Error: {str(e)}"
                     product_quality_check = f"Could not check product quality for order {order_id}. Error: {str(e)}"
             else:
                 if not image_path:
-                    retrun_validation_check = "Can't say as the user has not provided the image of the product"
+                    return_validation_check = "Can't say as the user has not provided the image of the product"
                     product_quality_check = "Can't say as the user has not provided the image of the product"
                 else:
-                    retrun_validation_check = "Can't process as no valid order ID was found"
+                    return_validation_check = "Can't process as no valid order ID was found"
                     product_quality_check = "Can't process as no valid order ID was found"
 
-            
             full_context = f"""
 Customer Info
 -------------
@@ -130,19 +137,19 @@ Customer Info
 
 Related User's Issued Tickets
 ------------------------------
-{relevant_ticket_info}
+{relavant_ticket_info}
 
 Relavant FAQs for the User Query
 ---------------------------------
-{relevant_faqs}
+{relavant_faqs}
 
 Relavant Policies for the User Query
 ---------------------------------
-{relevant_policy}
+{relavant_policy}
 
 Relavant Handbooks for the User Query
 ---------------------------------
-{relevant_handbook}
+{relavant_handbook}
 
 Order Info
 ----------
@@ -154,9 +161,26 @@ Product Quality Check Info For Returing The Defect Free Product
 
 Product Return Validation Check
 ------------------------------- 
-{retrun_validation_check}
+{return_validation_check}
 
 """
+# final_customer_info, relavant_ticket_info, relavant_policy, relavant_handbook, image_path, order_id, order_info, return_validation_check, product_quality_check, full_context
+            if debug:
+                print('Resolved Customer ID:\n\t', resolved_customer_id)
+                print('Resolved Tenant ID:\n\t', resolved_tenant_id)
+                print('Extracted Customer Info:\n\t', final_customer_info)
+                print('Extracted Tickets:\n\t', relavant_ticket_info)
+                print('Extracted FAQs:\n\t', relavant_faqs)
+                print('Extracted Policies:\n\t', relavant_policy)
+                print('Extracted Handbooks:\n\t', relavant_handbook)
+                print('Extracted Image Path:\n\t', image_path)
+                print('Extracted Order ID:\n\t', order_id)
+                print('Extracted Order Info:\n\t', order_info)
+                print('Extracted Return Validation Check:\n\t', return_validation_check)
+                print('Extracted Product Quality Check:\n\t', product_quality_check)
+                print('Full Context:\n\t', full_context)
+                
+
             routing_task = get_routing_task(user_input)
             senti_task = get_sentiment_analysis_task(user_input)
             escalation_task = get_escalation_task(user_input, routing_task, senti_task)

@@ -29,8 +29,13 @@ from qdrant_util.qdrant_retriever import (
 )
 
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-gemini_model = load_gemini_model(model_name="gemini-2.0-flash")
+GEMINI_MODEL_NAME = os.getenv("GEMINI_MODEL_NAME")
+
+gemini_model = load_gemini_model(model_name=GEMINI_MODEL_NAME)
 qdrant = QdrantClient(host="localhost", port=6333)
 
 # resolved_faq_tags = ['payments']
@@ -67,22 +72,23 @@ def get_return_product_validation_task(tenant_id, customer_id, order_id, image_p
         customer_id = customer_id,
         order_id = order_id
     )
-    retrived_image_info = retrieve_image_info(
+    retrieved_image_info = retrieve_image_info(
         client = qdrant,
         image_path=image_path,
         tenant_id = tenant_id,
         customer_id = customer_id,
         top_k=1,
-        k_prefetch=10
+        k_prefetch=10,
+        query_text=None
     )
     context = f"""
 Original Product Info
 ----------------------
 {order_info}
 
-Retrived Image Info
+Retrieved Image Info
 --------------------
-{retrived_image_info}
+{retrieved_image_info}
 """
     task = Task(
         name="ReturnValidation",
@@ -119,22 +125,23 @@ def get_product_quality_check_task(tenant_id, customer_id, order_id, image_path)
         customer_id = customer_id,
         order_id = order_id
     )
-    retrived_image_info = retrieve_image_info(
+    retrieved_image_info = retrieve_image_info(
         client = qdrant,
         image_path=image_path,
         tenant_id = tenant_id,
         customer_id = customer_id,
         top_k=1,
-        k_prefetch=10
+        k_prefetch=10,
+        query_text=None
     )
     context = f"""
 Original Product Info
 ----------------------
 {order_info}
 
-Retrived Image Info
+Retrieved Image Info
 --------------------
-{retrived_image_info}
+{retrieved_image_info}
 """
     task = Task(
         name="ProductQualityChecker",
